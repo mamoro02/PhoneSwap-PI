@@ -1,14 +1,4 @@
-<?php
 
-declare(strict_types=1);
-
-require_once __DIR__ . "/vendor/autoload.php";
-
-$security = new Security;
-
-$loginMessage = $security->doLogin();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,19 +36,21 @@ $loginMessage = $security->doLogin();
                 <div class="col-md-7"><img src="./imagenes/login.png"></div>
                 <div class="col-md-4 align-self-center">     
             <form action="">
-                <h1 class="title">Login</h1>
-                <p><strong><?= $loginMessage ?></strong></p>
+                <h1 class="title">SIGN IN</h1>
                 <label>
                     <i class="fa-solid fa-user"></i>
-                    <input placeholder="username" type="text" id="username" name="userAccount">
+                    <input placeholder="username" type="text" id="username" name="userName">
+                </label>
+                <label>
+                    <i class="fa-solid fa-user"></i>
+                    <input placeholder="email" type="email" id="email" name="email">
                 </label>
                 <label>
                     <i class="fa-solid fa-lock"></i>
-                    <input placeholder="password" type="password" id="password" name="userPassword">
+                    <input placeholder="password" type="password" id="password" name="password">
                 </label>
-                <a href="signin.php" class="link">¿Aún no estás registrado?</a>
         
-                <button id="button">Login</button>
+                <button id="button">Sign in</button>
             </form>
             
             <script src="main.js"></script>
