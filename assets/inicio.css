@@ -1,0 +1,153 @@
+body {
+    background-image: url('../imagenes/fondoStartPage.jpg');
+    height: 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+  }
+
+  h1 {
+    font-size: 80px;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  h2{
+    font-size: 34px;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+ *, *::before, *::after {
+	 box-sizing: border-box;
+}
+ :root {
+	 --color-primary-500: #9932CC;
+	 --color-primary-600: #C1A7B7;
+	 --color-primary-900: #EBD9E2;
+	 --color-secondary-500: #051b19;
+	 --color-secondary-900: #000a09;
+	 --font-primary: "Raleway", sans-serif;
+}
+ html {
+	 font-size: 10px;
+}
+ body {
+	 display: flex;
+	 overflow: hidden;
+	 align-items: center;
+	 justify-content: center;
+	 width: 100vw;
+	 height: 100vh;
+	 background-color: var(--color-secondary-500);
+	 font-family: var(--font-primary);
+}
+ .btn {
+	 position: relative;
+	 display: inline-block;
+	 margin: 0;
+	 padding: 1.5rem 4.5rem;
+	 background: var(--color-primary-500);
+	 color: var(--color-secondary-900);
+	 font-family: inherit;
+	 font-size: 1.4rem;
+	 font-weight: 300;
+	 line-height: normal;
+	 border: 0;
+	 border-radius: 0.4rem;
+	 box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
+	 appearance: none;
+	 cursor: pointer;
+	 transition: background 250ms, box-shadow 250ms;
+}
+ .btn:hover {
+	 background: var(--color-primary-600);
+	 box-shadow: -2px 2px 16px rgba(0, 0, 0, 0.6);
+}
+ .btn:active, .btn:focus {
+	 outline: none;
+}
+ .btn:active {
+	 box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.8);
+}
+ .btn .text {
+	 position: relative;
+	 z-index: 2;
+}
+ .btn .dot {
+	 position: absolute;
+	 z-index: -1;
+	 display: block;
+	 width: 200px;
+	 height: 10px;
+	 transform-origin: 5px 5px;
+	 pointer-events: none;
+}
+ .btn .dot:nth-child(1) {
+	 top: 50%;
+	 left: 100%;
+	 transform: translate3d(-10px, -5px, 0);
+}
+ .btn .dot:nth-child(2) {
+	 bottom: 0;
+	 left: 100%;
+	 transform: translate3d(-10px, 0, 0) rotate(45deg);
+}
+ .btn .dot:nth-child(3) {
+	 bottom: 0;
+	 left: 50%;
+	 transform: translate3d(-5px, 0, 0) rotate(90deg);
+}
+ .btn .dot:nth-child(4) {
+	 bottom: 0;
+	 left: 0;
+	 transform: rotate(135deg);
+}
+ .btn .dot:nth-child(5) {
+	 top: 50%;
+	 left: 0;
+	 transform: translate3d(0, -5px, 0) rotate(180deg);
+}
+ .btn .dot:nth-child(6) {
+	 top: 0;
+	 left: 0;
+	 transform: rotate(225deg);
+}
+ .btn .dot:nth-child(7) {
+	 top: 0;
+	 left: 50%;
+	 transform: translate3d(-5px, 0, 0) rotate(270deg);
+}
+ .btn .dot:nth-child(8) {
+	 top: 0;
+	 left: 100%;
+	 transform: translate3d(-10px, 0, 0) rotate(315deg);
+}
+ .btn .dot::before {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 display: block;
+	 width: 6px;
+	 height: 6px;
+	 background-color: var(--color-primary-500);
+	 border-radius: 50%;
+	 offset-path: path("M0 1c7.1 0 10.7 2 14.3 4s7.1 4 14.3 4 10.7-2 14.3-4 7.2-4 14.3-4 10.7 2 14.3 4 7.1 4 14.3 4 10.7-2 14.3-4 7.1-4 14.3-4 10.7 2 14.3 4 7.1 4 14.3 4 10.7-2 14.3-4 7.1-4 14.3-4 10.7 2 14.3 4 7.1 4 14.3 4");
+	 offset-distance: 0;
+	 pointer-events: none;
+	 content: "";
+}
+ .btn.is-animating .dot::before {
+	 animation: dot 750ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+ @keyframes dot {
+	 0% {
+		 offset-distance: 0%;
+		 opacity: 1;
+	}
+	 100% {
+		 offset-distance: 100%;
+		 opacity: 0;
+	}
+}
