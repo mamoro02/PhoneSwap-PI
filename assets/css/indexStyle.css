@@ -1,4 +1,14 @@
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: #000;
-  }
-  
+.card img {
+  height: 280px;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #A04E85;
+  border-color: #5b2c4b;
+}
+
+.btn-primary:visited, .btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+  background-color:  #C1A7B7;
+  border-color: #5b2c4b;
+}
