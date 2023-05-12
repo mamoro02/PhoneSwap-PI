@@ -1,3 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . "/vendor/autoload.php";
+
+$security = new Security;
+
+$userName = $security->getUserData();
+
+/* var_dump($security->getUserData()); */
+
+?>
 <!doctype html>
 <html>
 
@@ -10,9 +23,8 @@
 
     <script type='text/javascript' src=''></script>
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-    <script type='text/javascript'
-        src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
-    <link rel="stylesheet" href="assets/indexStyle.css">
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="assets/css/indexStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
 </head>
@@ -26,8 +38,7 @@
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
                     <a class="navbar-brand" href="#">
-                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0); margin-right: 5px;"
-                            class="d-inline-block align-top" alt="">
+                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0); margin-right: 5px;" class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
                     </a>
                 </div>
@@ -42,8 +53,8 @@
                     <a href="login.php" style="color: white; display: flex; align-items: center;">
                         <img src="imagenes/icon/iconLogin.png" alt="Login" width="30px" style="margin-right: 5px;">
                         Login
-                </a>
-                    
+                    </a>
+                    <p style="color:white">Hola <?= $userName ?></p>
                 </div>
 
             </nav>
@@ -86,12 +97,10 @@
                         <h3 class="mb-3">IPHONE</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button"
-                            data-slide="prev">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
                             <i class="fa fa-arrow-left"></i>
                         </a>
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button"
-                            data-slide="next">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="next">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -104,8 +113,7 @@
 
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphone12.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone12.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone 12</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -122,8 +130,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphone13.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone13.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone 13</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -139,8 +146,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphone13mini.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone13mini.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone 13 mini</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -157,8 +163,7 @@
 
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphone14.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone14.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone 14</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -180,8 +185,7 @@
 
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphone14pro.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone14pro.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone 14 pro</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -198,8 +202,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphonese.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphonese.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone SE</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -215,8 +218,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphonex.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphonex.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone X</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -231,8 +233,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphonexr.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphonexr.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone XR</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -262,12 +263,10 @@
                         <h3 class="mb-3">SAMSUNG</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
-                            data-slide="prev">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                             <i class="fa fa-arrow-left"></i>
                         </a>
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
-                            data-slide="next">
+                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="next">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -280,8 +279,7 @@
 
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/samsung/honorMagic5Pro.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/samsung/honorMagic5Pro.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Honor Magic 5 Pro</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -298,8 +296,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/samsung/pocoX5.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/samsung/pocoX5.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Poco X5</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -315,8 +312,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/samsung/realmeNarzo50A.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/samsung/realmeNarzo50A.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Realme Narzo 50A</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -333,8 +329,7 @@
 
                                         <div class="col-md-3  text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/samsung/samsungGalaxyEnterpriseEdition.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/samsung/samsungGalaxyEnterpriseEdition.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone 14</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -356,8 +351,7 @@
 
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphone14pro.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone14pro.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone 14 pro</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -374,8 +368,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphonese.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphonese.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone SE</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -391,8 +384,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphonex.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphonex.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone X</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -407,8 +399,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
-                                                <img class="img-fluid" alt="100%x280"
-                                                    src="imagenes/img/iphone/iphonexr.png">
+                                                <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphonexr.png">
                                                 <div class="card-body">
                                                     <h4 class="card-title ">Iphone XR</h4>
                                                     <p class="card-text">With supporting text below as a natural lead-in
@@ -452,14 +443,11 @@
 
                     <div class="mt-4">
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button"
-                            class="btn btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button"
-                            class="btn btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
                         <!-- Twitter -->
-                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-                            type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
+                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
 
                     </div>
                 </div>
@@ -474,8 +462,7 @@
                                 Carrer del Rei En Jaume I, 2, 46470</span>
                         </li>
                         <li class="mb-3">
-                            <span class="fa-li"><i class="bi bi-envelope"></i></i></span><span
-                                class="ms-2">info@phoneswap.es</span>
+                            <span class="fa-li"><i class="bi bi-envelope"></i></i></span><span class="ms-2">info@phoneswap.es</span>
                         </li>
                         <li class="mb-3">
                             <span class="fa-li"><i class="bi bi-phone"></i></span><span class="ms-2">961 15 23 32</span>
@@ -490,10 +477,7 @@
 
                     <!--Google map-->
                     <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 200px">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3082.954188277158!2d-0.414915584634646!3d39.402542479495956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604e82a8672a35%3A0xed578f5f80fed685!2sFlorida%20Universitaria!5e0!3m2!1ses!2ses!4v1683828098274!5m2!1ses!2ses"
-                            width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3082.954188277158!2d-0.414915584634646!3d39.402542479495956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604e82a8672a35%3A0xed578f5f80fed685!2sFlorida%20Universitaria!5e0!3m2!1ses!2ses!4v1683828098274!5m2!1ses!2ses" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
