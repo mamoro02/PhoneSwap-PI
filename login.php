@@ -45,7 +45,7 @@ $loginMessage = $security->doLogin();
             <div class="row" style=" height: 800px";>
                 <div class="col-md-7"><img src="./imagenes/login.png"></div>
                 <div class="col-md-4 align-self-center">     
-            <form action="">
+            <form action="" method="post">
                 <h1 class="title">Login</h1>
                 <p><strong><?= $loginMessage ?></strong></p>
                 <label>

@@ -68,7 +68,7 @@ class Security extends Connection
 
     private function getUser($userAccount)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM cuenta WHERE nombreCuenta = ? ");
+        $stmt = $this->conn->prepare("SELECT * FROM cliente WHERE nombreCuenta = ? ");
         $stmt->bindParam(1, $userAccount, PDO::PARAM_STR);
 
         $stmt->execute();
