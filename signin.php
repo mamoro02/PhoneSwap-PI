@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>LOGIN - Phone Swap</title>
+    <title>SignIn - Phone Swap</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,7 +35,7 @@
             <div class="row" style=" height: 800px";>
                 <div class="col-md-7"><img src="./imagenes/login.png"></div>
                 <div class="col-md-4 align-self-center">     
-            <form action="">
+            <form action="" method="post" class="signIn">
                 <h1 class="title">SIGN IN</h1>
                 <label>
                     <i class="fa-solid fa-user"></i>
@@ -49,7 +49,18 @@
                     <i class="fa-solid fa-lock"></i>
                     <input placeholder="password" type="password" id="password" name="password">
                 </label>
-        
+                <label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input placeholder="nombre" type="text" id="nameClient" name="nameClient">
+                </label>
+                <label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input placeholder="apellido" type="text" id="sureName" name="sureName">
+                </label>
+                <label>
+                    <i class="fa-solid fa-lock"></i>
+                    <input placeholder="telefono" type="tel" id="telephone" name="telephone">
+                </label>
                 <button id="button">Sign in</button>
             </form>
             

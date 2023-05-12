@@ -33,6 +33,17 @@ form {
     box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
 }
 
+.signIn {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    padding: 20px 25px;
+    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
+}
+
 form .title {
     color: #252525;
     font-size: 35px;
