@@ -6,7 +6,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 
 $security = new Security;
 
-$userName = $security->getUserData();
+$userName =$security->getUserData();
 
 /* var_dump($security->getUserData()); */
 
@@ -54,7 +54,7 @@ $userName = $security->getUserData();
                         <img src="imagenes/icon/iconLogin.png" alt="Login" width="30px" style="margin-right: 5px;">
                         Login
                     </a>
-                    <p style="color:white">Hola <?= $userName ?></p>
+                    <?="<p style='color:white'>$userName</p>"?>
                 </div>
 
             </nav>
