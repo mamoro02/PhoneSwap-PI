@@ -1,0 +1,113 @@
+.estado-title {
+    font-size: 16px;
+    margin-bottom: 10px; 
+}
+.estado-telefono {
+    background-color: rgb(241, 246, 250);
+    margin-bottom: 30px;
+}
+  
+.btn-estado-telefono {
+    margin-right: 10px;
+    background-color: #C1A7B7;
+    border-color: #5b2c4b;
+    color: #fff;
+    font-size: 12px; 
+    padding: 20px 40px; 
+    margin-bottom: 10px;
+    border-width: 2px;
+}
+  
+.btn-estado-telefono:hover {
+  background-color:  #EBD9E2;
+  border-color: #5b2c4b;
+  color: #fff;
+}
+
+.storage-title {
+    font-size: 16px;
+    margin-bottom: 10px; 
+}
+  
+.storage-section {
+    background-color: rgb(241, 246, 250);
+    margin-bottom: 30px;
+  }
+  
+  .storage-button {
+    margin-right: 10px;
+    background-color: #C1A7B7;
+    border-color: #5b2c4b;
+    color: #fff;
+    border-width: 2px;
+    font-size: 12px; 
+    padding: 20px 40px;  
+  }
+  
+  .storage-button:hover {
+    background-color:  #EBD9E2;
+    border-color: #5b2c4b;
+    color: #fff;
+  }
+
+  .colors-container {
+    background-color: rgb(241, 246, 250);
+    margin-bottom: 30px;
+  }
+  
+  .colors-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .btn-colors {
+    margin-right: 10px;
+    background-color: #C1A7B7;
+    border-color: #5b2c4b;
+    color: #fff;
+    border-width: 2px;
+    font-size: 12px; 
+    padding: 20px 40px; 
+  }
+  
+  .btn-colors:hover {
+    background-color:  #EBD9E2;
+  border-color: #5b2c4b;
+  color: #fff;
+  }
+
+  .btn-primary {
+    background-color: #A04E85;
+    border-color: #5b2c4b;
+    color: #fff;
+    font-size: 12px; 
+    padding: 10px 30px;
+    margin-left: 540px;
+    margin-top: 40px;
+    position: absolute;
+    border: black solid 2px;
+  }
+
+  .btn-primary:hover {
+    background-color:  black;
+    border-color: #5b2c4b;
+    color: #fff;
+  }
+
+  .btn-buy {
+    background-color: #A04E85;
+    border-color: #5b2c4b;
+    color: #fff;
+    font-size: 10px; 
+    padding: 10px 30px;
+    margin-left: 300px;
+    margin-bottom: 40px;
+    position: absolute;
+    border: black solid 2px;
+  }
+
+  .btn-buy:hover {
+    background-color:  black;
+    border-color: #5b2c4b;
+    color: #fff;
+  }

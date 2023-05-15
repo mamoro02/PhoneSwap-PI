@@ -17,7 +17,7 @@ $userName =$security->getUserData();
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Snippet - GoSNippets</title>
+    <title>Phone Swap</title>
     <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
 
@@ -49,14 +49,13 @@ $userName =$security->getUserData();
                     </form>
                 </div>
                 <!-- Icono login y enlace a login.php -->
-                <div class="row col-3 offset-1">
-                    <a href="login.php" style="color: white; display: flex; align-items: center;">
-                        <img src="imagenes/icon/iconLogin.png" alt="Login" width="30px" style="margin-right: 5px;">
-                        Login
-                    </a>
-                    <?="<p style='color:white'>$userName</p>"?>
+                <div class="row col-1 offset-1">
+                <?="<p style='color:white'>$userName</p>"?>
+                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
                 </div>
-
+                <div class="row col-2">
+                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                </div>
             </nav>
 
         </div>
