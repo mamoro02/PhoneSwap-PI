@@ -1,8 +1,13 @@
+*{
+  font-family: 'Raleway', sans-serif;
+}
 .card img {
   height: 280px;
   width: 100%;
 }
-
+h1, h2,h3,h4{
+  font-weight: bold;
+}
 .btn-primary {
   background-color: #A04E85;
   border-color: #5b2c4b;
