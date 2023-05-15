@@ -62,19 +62,19 @@ $userName =$security->getUserData();
         </div>
         <!-- Banner de fondo -->
 
-        <div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel" style="width: 60%">
+        <div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel" style="width: 75%;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner1.jpg" alt="First slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner1.png" alt="First slide" style="width: 500px; height: 600px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner2.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner2.png" alt="Second slide" style="width: 500px; height: 600px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner3.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner3.png" alt="Third slide" style="width: 500px; height: 600px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner4.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner4.png" alt="Third slide" style="width: 500px; height: 600px;">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
