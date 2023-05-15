@@ -8,6 +8,12 @@ $security = new Security;
 
 $userName = $security->getUserData();
 
+//prueba
+$mobileRepository = new MobileRepository;
+
+var_dump($mobileRepository->getAllModels());
+exit;
+
 /* var_dump($security->getUserData()); */
 
 ?>
