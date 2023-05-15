@@ -50,11 +50,11 @@ $userName =$security->getUserData();
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
+                <?="<p style='color:white'>$userName</p>"?>
                     <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
                 </div>
                 <div class="row col-2">
                     <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
-                    <?="<p style='color:white'>$userName</p>"?>
                 </div>
             </nav>
 
