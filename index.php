@@ -37,7 +37,7 @@ $userName = $security->getUserData();
     <!-- barra de navegacion -->
     <header>
         <div class="container-fluid">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark bg-dark  fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
