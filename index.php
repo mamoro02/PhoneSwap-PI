@@ -6,7 +6,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 
 $security = new Security;
 
-$userName =$security->getUserData();
+$userName = $security->getUserData();
 
 /* var_dump($security->getUserData()); */
 
@@ -44,13 +44,19 @@ $userName =$security->getUserData();
                 </div>
                 <!-- Barra de busqueda -->
                 <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <form action="" method="post">
+                        <select name="status">
+                            <option value="Huawei" selected>Huawei</option>
+                            <option value="Iphone">Iphone</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Xiaomi">Xiaomi</option>
+                        </select>
+                        <button type="submit"><img src="images/arrow@2x.png" alt=""></button>
                     </form>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                <?="<p style='color:white'>$userName</p>"?>
+                    <?= "<p style='color:white'>$userName</p>" ?>
                     <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
                 </div>
                 <div class="row col-2">
