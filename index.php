@@ -6,7 +6,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 
 $security = new Security;
 
-$userName =$security->getUserData();
+$userName = $security->getUserData();
 
 /* var_dump($security->getUserData()); */
 
@@ -17,7 +17,7 @@ $userName =$security->getUserData();
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Snippet - GoSNippets</title>
+    <title>Phone Swap</title>
     <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
 
@@ -27,13 +27,17 @@ $userName =$security->getUserData();
     <link rel="stylesheet" href="assets/css/indexStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
 </head>
 
 <body oncontextmenu='return false' class='snippet-body'>
     <!-- barra de navegacion -->
     <header>
         <div class="container-fluid">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark bg-dark  fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
@@ -43,20 +47,26 @@ $userName =$security->getUserData();
                     </a>
                 </div>
                 <!-- Barra de busqueda -->
-                <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
+                <div class="dropdown show">
+                    <a class="btn btn-secondary btn-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filtrado de moviles
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Iphone</a>
+                        <a class="dropdown-item" href="#">Samsung</a>
+                        <a class="dropdown-item" href="#">Huawei</a>
+                        <a class="dropdown-item" href="#">Xiaomi</a>
+                    </div>
                 </div>
                 <!-- Icono login y enlace a login.php -->
-                <div class="row col-3 offset-1">
-                    <a href="login.php" style="color: white; display: flex; align-items: center;">
-                        <img src="imagenes/icon/iconLogin.png" alt="Login" width="30px" style="margin-right: 5px;">
-                        Login
-                    </a>
-                    <?="<p style='color:white'>$userName</p>"?>
+                <div class="row col-1 offset-1">
+                    <?= "<p style='color:white'>$userName</p>" ?>
+                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
                 </div>
-
+                <div class="row col-2">
+                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                </div>
             </nav>
 
         </div>
@@ -97,10 +107,10 @@ $userName =$security->getUserData();
                         <h3 class="mb-3">IPHONE</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                        <a class="btn  mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
                             <i class="fa fa-arrow-left"></i>
                         </a>
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                        <a class="btn  mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="next">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -119,7 +129,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -128,6 +138,7 @@ $userName =$security->getUserData();
 
                                             </div>
                                         </div>
+
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
                                                 <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone13.png">
@@ -136,7 +147,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -152,7 +163,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -169,7 +180,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -191,7 +202,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -208,7 +219,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -224,7 +235,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -239,7 +250,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -263,10 +274,10 @@ $userName =$security->getUserData();
                         <h3 class="mb-3">SAMSUNG</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <a class="btn mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                             <i class="fa fa-arrow-left"></i>
                         </a>
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <a class="btn mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="next">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -285,7 +296,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -302,7 +313,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -318,7 +329,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -335,7 +346,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -357,7 +368,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -374,7 +385,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -390,7 +401,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -405,7 +416,7 @@ $userName =$security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -441,13 +452,13 @@ $userName =$security->getUserData();
                         Internet 24h.
                     </p>
 
-                    <div class="mt-4">
+                    <div class="mt-4 btn-">
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
                         <!-- Twitter -->
-                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
+                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
 
                     </div>
                 </div>
