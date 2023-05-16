@@ -6,7 +6,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 
 $security = new Security;
 
-$userName =$security->getUserData();
+$userName = $security->getUserData();
 
 /* var_dump($security->getUserData()); */
 
@@ -27,13 +27,17 @@ $userName =$security->getUserData();
     <link rel="stylesheet" href="assets/css/indexStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
 </head>
 
 <body oncontextmenu='return false' class='snippet-body'>
     <!-- barra de navegacion -->
     <header>
         <div class="container-fluid">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark bg-dark  fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
@@ -44,13 +48,19 @@ $userName =$security->getUserData();
                 </div>
                 <!-- Barra de busqueda -->
                 <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <form action="" method="post">
+                        <select name="status">
+                            <option value="Huawei" selected>Huawei</option>
+                            <option value="Iphone">Iphone</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Xiaomi">Xiaomi</option>
+                        </select>
+                        <button type="submit"><img src="images/arrow@2x.png" alt=""></button>
                     </form>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                <?="<p style='color:white'>$userName</p>"?>
+                    <?= "<p style='color:white'>$userName</p>" ?>
                     <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
                 </div>
                 <div class="row col-2">
