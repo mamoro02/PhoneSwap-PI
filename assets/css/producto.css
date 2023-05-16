@@ -36,6 +36,17 @@ h1, h2,h3,h4{
   color: #fff;
 }
 
+.btn-estado-telefono:active {
+  background-color: black;
+}
+
+.btn-estado-telefono:focus{
+  box-shadow: none;
+  background-color:  #EBD9E2;
+  border-color: #5b2c4b;
+  color: #fff;
+}
+
 .storage-title {
     font-size: 16px;
     margin-bottom: 10px; 
@@ -53,10 +64,21 @@ h1, h2,h3,h4{
     color: #fff;
     border-width: 2px;
     font-size: 12px; 
-    padding: 20px 40px;  
+    padding: 20px 50px;  
   }
   
   .storage-button:hover {
+    background-color:  #EBD9E2;
+    border-color: #5b2c4b;
+    color: #fff;
+  }
+
+  .storage-button:active {
+    background-color: black;
+  }
+
+  .storage-button:focus{
+    box-shadow: none;
     background-color:  #EBD9E2;
     border-color: #5b2c4b;
     color: #fff;
@@ -79,16 +101,28 @@ h1, h2,h3,h4{
     color: #fff;
     border-width: 2px;
     font-size: 12px; 
-    padding: 20px 40px; 
+    padding: 20px 50px;
   }
   
   .btn-colors:hover {
     background-color:  #EBD9E2;
-  border-color: #5b2c4b;
-  color: #fff;
+    border-color: #5b2c4b;
+    color: #fff;
+    
   }
 
-  .btn-primary {
+  .btn-colors:active {
+    background-color: black;
+  }
+
+  .btn-colors:focus{
+    box-shadow: none;
+    background-color:  #EBD9E2;
+    border-color: #5b2c4b;
+    color: #fff;
+  }
+
+  .btn-buy {
     background-color: #A04E85;
     border-color: #5b2c4b;
     color: #fff;
@@ -100,13 +134,17 @@ h1, h2,h3,h4{
     border: black solid 2px;
   }
 
-  .btn-primary:hover {
+  .btn-buy:hover {
     background-color:  black;
     border-color: #5b2c4b;
     color: #fff;
   }
 
-  .btn-buy {
+  .btn-buy:focus{
+    box-shadow: none;
+  }
+
+  .btn-compare {
     background-color: #A04E85;
     border-color: #5b2c4b;
     color: #fff;
@@ -118,8 +156,12 @@ h1, h2,h3,h4{
     border: black solid 2px;
   }
 
-  .btn-buy:hover {
+  .btn-compare:hover {
     background-color:  black;
     border-color: #5b2c4b;
     color: #fff;
+  }
+
+  .btn-compare:focus{
+    box-shadow: none;
   }

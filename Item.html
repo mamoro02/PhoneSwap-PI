@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-6" style="background-color: rgb(241, 246, 250);">
                 <h2 style="position: absolute; margin-left: 40px; margin-top: 20px; font-size: 25px; ">Xiaomi 13</h2>
-                <button class="btn btn-primary">Comprar</button></h2>
+                <button class="btn btn-buy">Comprar</button></h2>
                 <br>
                 <p style="position: absolute; margin-left: 40px; padding:10px; margin-top: 30px;"><a href="fichaTecnica.html">Ficha técnica</a></p>
                 
@@ -82,9 +82,9 @@
                 <div class="row" style="margin-top: 120px;">
                     <div class="col-md-12 estado-telefono text-center">
                       <h2 class="estado-title" style="font-family: 'Raleway', sans-serif; font-weight: bold;">Estado del teléfono</h2>
-                      <button type="button" class="btn btn-secondary btn-estado-telefono"><b>Bueno</b></button>
-                      <button type="button" class="btn btn-secondary btn-estado-telefono"><b>Muy bueno</b></button>
-                      <button type="button" class="btn btn-secondary btn-estado-telefono"><b>Excelente</b></button>
+                      <button type="button" class="btn btn-estado-telefono"><b>Bueno</b></button>
+                      <button type="button" class="btn btn-estado-telefono"><b>Muy bueno</b></button>
+                      <button type="button" class="btn btn-estado-telefono"><b>Excelente</b></button>
                     </div>
                   </div>
                   
@@ -93,9 +93,9 @@
                   <div class="row">
                     <div class="col-md-12 storage-section text-center">
                       <h2 class="storage-title">Almacenamiento</h2>
-                      <button type="button" class="btn btn-secondary storage-button"><b>64GB</b></button>
-                      <button type="button" class="btn btn-secondary storage-button"><b>128GB</b></button>
-                      <button type="button" class="btn btn-secondary storage-button"><b>256GB</b></button>
+                      <button type="button" class="btn storage-button"><b>64GB</b></button>
+                      <button type="button" class="btn storage-button"><b>128GB</b></button>
+                      <button type="button" class="btn storage-button"><b>256GB</b></button>
                     </div>
                   </div>
                   
@@ -106,19 +106,19 @@
                       <h2 class="colors-title">Colores</h2>
                       <div class="row">
                         <div class="col-md-12 text-center">
-                          <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Red</b></button>
-                          <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Green</b></button>
-                          <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Purple</b></button>
+                          <button class="btn btn-colors  btn-lg m-2"><b>Red</b></button>
+                          <button class="btn btn-colors  btn-lg m-2"><b>Green</b></button>
+                          <button class="btn btn-colors  btn-lg m-2"><b>Purple</b></button>
                         </div>
                         <div class="col-md-12 text-center">
-                          <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>White</b></button>
-                          <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Yellow</b></button>
-                          <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Black</b></button>
+                          <button class="btn btn-colors  btn-lg m-2"><b>White</b></button>
+                          <button class="btn btn-colors  btn-lg m-2"><b>Yellow</b></button>
+                          <button class="btn btn-colors  btn-lg m-2"><b>Black</b></button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <button class="btn btn-buy">Comparar</button></h2>
+                  <button class="btn btn-compare">Comparar</button></h2>
                   <br>
                   
                   
