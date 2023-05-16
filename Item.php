@@ -25,7 +25,7 @@
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
                             class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
