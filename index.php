@@ -10,6 +10,18 @@ $userName = $security->getUserData();
 
 /* var_dump($security->getUserData()); */
 
+session_start();
+
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['loggedIn'])) {
+    // Usuario ha iniciado sesión, mostrar enlace para cerrar sesión
+    $userName = $_SESSION['loggedIn']; // Obtener el nombre de usuario
+    $logoutLink = '<a href="logout.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Cerrar sesión</a>';
+} else {
+    // Usuario no ha iniciado sesión, mostrar enlace para iniciar sesión
+    $userName = ''; // No hay nombre de usuario
+    $logoutLink = '<a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Iniciar sesión</a>';
+}
 ?>
 <!doctype html>
 <html>
@@ -61,12 +73,13 @@ $userName = $security->getUserData();
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                    <?= "<p style='color:white'>$userName</p>" ?>
-                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
-                </div>
-                <div class="row col-2">
-                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
-                </div>
+  <p style="color:white"><?= $userName ?></p>
+  <?= $logoutLink ?>
+</div>
+<div class="row col-2">
+  <a href="miCuenta.html" class="mi-cuenta-link"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+</div>
+
             </nav>
 
         </div>
@@ -75,16 +88,16 @@ $userName = $security->getUserData();
         <div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel" style="width: 75%;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="imagenes/icon/banner1.png" alt="First slide" style="width: 500px; height: 600px;">
+                    <img class="d-block w-100" src="imagenes/icon/banner1.png" alt="First slide" style="width: 480px; height: 700px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/banner2.png" alt="Second slide" style="width: 500px; height: 600px;">
+                    <img class="d-block w-100" src="imagenes/icon/banner2.png" alt="Second slide" style="width: 480px; height: 700px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/banner3.png" alt="Third slide" style="width: 500px; height: 600px;">
+                    <img class="d-block w-100" src="imagenes/icon/banner3.png" alt="Third slide" style="width: 480px; height: 700px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/banner4.png" alt="Third slide" style="width: 500px; height: 600px;">
+                    <img class="d-block w-100" src="imagenes/icon/banner4.png" alt="Third slide" style="width: 480px; height: 700px;">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
