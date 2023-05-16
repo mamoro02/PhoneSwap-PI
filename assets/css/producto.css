@@ -1,3 +1,15 @@
+*{
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+h1, h2,h3,h4{
+
+  font-weight: bold;
+
+}
+
 .estado-title {
     font-size: 16px;
     margin-bottom: 10px; 
@@ -110,4 +122,8 @@
     background-color:  black;
     border-color: #5b2c4b;
     color: #fff;
+  }
+
+  .navbar-brand {
+    text-decoration: none;
   }
