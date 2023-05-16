@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.navbar-brand{
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
