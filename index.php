@@ -147,7 +147,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -163,7 +163,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -180,7 +180,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -202,7 +202,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -219,7 +219,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -235,7 +235,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -250,7 +250,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -313,7 +313,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -329,7 +329,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -346,7 +346,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -368,7 +368,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -385,7 +385,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -401,7 +401,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -416,7 +416,7 @@ $userName = $security->getUserData();
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn">Detalles</a>
+                                                    <a href="Item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
