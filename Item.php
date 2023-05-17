@@ -6,6 +6,9 @@ require_once __DIR__ . "/vendor/autoload.php";
 
 $idModelo = isset($_GET['idModelo']) ? (int) $_GET['idModelo'] : "";
 
+/* var_dump($idModelo);
+exit; */
+
 $mobileRepository = new MobileRepository;
 
 $currentModel = $mobileRepository->getModel($idModelo);
@@ -69,13 +72,13 @@ exit; */
     <div class="container-fluid">
         <div class="row" style="height: 110vh; margin-right: 0;">
             <div class="col-md-6">
-                    <img src="imagenes/img/xiaomi/Xiaomi13.png" alt="Imagen" style="Width: 95%; height:95%; margin-top: 10px;">
+                    <img src="imagenes/img/<?= $currentModel->getImage() ?>" alt="Imagen" style="Width: 95%; height:95%; margin-top: 10px;">
             </div>
             <div class="col-md-6" style="background-color: rgb(241, 246, 250);">
-                <h2 style="position: absolute; margin-left: 40px; margin-top: 20px; font-size: 25px; ">Xiaomi 13</h2>
+                <h2 style="position: absolute; margin-left: 40px; margin-top: 20px; font-size: 25px; "><?= $currentModel->getModel() ?></h2>
                 <button class="btn btn-buy">Comprar</button></h2>
                 <br>
-                <p style="position: absolute; margin-left: 40px; padding:10px; margin-top: 30px;"><a href="fichaTecnica.html">Ficha técnica</a></p>
+                <p style="position: absolute; margin-left: 40px; padding:10px; margin-top: 30px;"><a <?= "href='fichaTecnica.php?idModelo=".$currentModel->getIdModel()."'" ?>>Ficha técnica</a></p>
                 
                 <!--Prueba de estrellas de valoración-->
 
