@@ -97,7 +97,7 @@ exit; */
                 <div class="row" style="margin-top: 120px;">
                     <div class="col-md-12 estado-telefono text-center">
                       <h2 class="estado-title" style="font-family: 'Raleway', sans-serif; font-weight: bold;">Estado del teléfono</h2>
-                      <button type="button" class="btn btn-estado-telefono"><b>Bueno</b></button>
+                      <button type="button" class="btn btn-estado-telefono" disabled><b>Bueno</b></button>
                       <button type="button" class="btn btn-estado-telefono"><b>Muy bueno</b></button>
                       <button type="button" class="btn btn-estado-telefono"><b>Excelente</b></button>
                     </div>
