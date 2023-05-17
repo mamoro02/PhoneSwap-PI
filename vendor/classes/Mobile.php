@@ -63,4 +63,40 @@ class Mobile extends Model
             $stock
         );
     }
+
+
+    public function getNumSerie()
+    {
+        return $this->numSerie;
+    }
+
+
+    public function getIdModelMobile()
+    {
+        return $this->idModelMobile;
+    }
+
+
+    public function getIdClient()
+    {
+        return $this->idClient;
+    }
+
+
+    public function getSalePrize()
+    {
+        return $this->salePrize;
+    }
+
+
+    public function getSaleDate()
+    {
+        return $this->saleDate;
+    }
+
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
 }

@@ -8,14 +8,20 @@ $security = new Security;
 
 $userName = $security->getUserData();
 
-//prueba
-$mobileRepository = new MobileRepository;
-
-var_dump($mobileRepository->getAllModels());
-exit;
-
 /* var_dump($security->getUserData()); */
 
+session_start();
+
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['loggedIn'])) {
+    // Usuario ha iniciado sesión, mostrar enlace para cerrar sesión
+    $userName = $_SESSION['loggedIn']; // Obtener el nombre de usuario
+    $logoutLink = '<a href="logout.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Cerrar sesión</a>';
+} else {
+    // Usuario no ha iniciado sesión, mostrar enlace para iniciar sesión
+    $userName = ''; // No hay nombre de usuario
+    $logoutLink = '<a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Iniciar sesión</a>';
+}
 ?>
 <!doctype html>
 <html>
@@ -33,53 +39,65 @@ exit;
     <link rel="stylesheet" href="assets/css/indexStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
 </head>
 
 <body oncontextmenu='return false' class='snippet-body'>
     <!-- barra de navegacion -->
     <header>
         <div class="container-fluid">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark bg-dark  fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0); margin-right: 5px;" class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
                     </a>
                 </div>
                 <!-- Barra de busqueda -->
-                <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
+                <div class="dropdown show">
+                    <a class="btn btn-secondary btn-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filtrado de moviles
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Iphone</a>
+                        <a class="dropdown-item" href="#">Samsung</a>
+                        <a class="dropdown-item" href="#">Huawei</a>
+                        <a class="dropdown-item" href="#">Xiaomi</a>
+                    </div>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                    <?= "<p style='color:white'>$userName</p>" ?>
-                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
-                </div>
-                <div class="row col-2">
-                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
-                </div>
+  <p style="color:white"><?= $userName ?></p>
+  <?= $logoutLink ?>
+</div>
+<div class="row col-2">
+  <a href="miCuenta.html" class="mi-cuenta-link"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+</div>
+
             </nav>
 
         </div>
         <!-- Banner de fondo -->
 
-        <div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel" style="width: 60%">
+        <div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel" style="width: 75%;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner1.jpg" alt="First slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner1.png" alt="First slide" style="width: 480px; height: 700px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner2.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner2.png" alt="Second slide" style="width: 480px; height: 700px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner3.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner3.png" alt="Third slide" style="width: 480px; height: 700px;">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imagenes/icon/fotoBanner4.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="imagenes/icon/banner4.png" alt="Third slide" style="width: 480px; height: 700px;">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -102,10 +120,10 @@ exit;
                         <h3 class="mb-3">IPHONE</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                        <a class="btn  mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
                             <i class="fa fa-arrow-left"></i>
                         </a>
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                        <a class="btn  mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="next">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -124,7 +142,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -133,6 +151,7 @@ exit;
 
                                             </div>
                                         </div>
+
                                         <div class="col-md-3 mb-3 text-center">
                                             <div class="card">
                                                 <img class="img-fluid" alt="100%x280" src="imagenes/img/iphone/iphone13.png">
@@ -141,7 +160,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -157,7 +176,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -174,7 +193,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -196,7 +215,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -213,7 +232,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -229,7 +248,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -244,7 +263,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -268,10 +287,10 @@ exit;
                         <h3 class="mb-3">SAMSUNG</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <a class="btn mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                             <i class="fa fa-arrow-left"></i>
                         </a>
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <a class="btn mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="next">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
@@ -290,7 +309,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="#" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -307,7 +326,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -323,7 +342,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -340,7 +359,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -362,7 +381,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -379,7 +398,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
 
                                                 </div>
                                                 <div class="card-footer text-muted ">
@@ -395,7 +414,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -410,7 +429,7 @@ exit;
                                                     <p class="card-text">With supporting text below as a natural lead-in
                                                         to
                                                         additional content.</p>
-                                                    <a href="#" class="btn btn-primary r">Detalles</a>
+                                                    <a href="item.php" class="btn">Detalles</a>
                                                 </div>
                                                 <div class="card-footer text-muted ">
                                                     450€
@@ -446,13 +465,13 @@ exit;
                         Internet 24h.
                     </p>
 
-                    <div class="mt-4">
+                    <div class="mt-4 btn-">
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
                         <!-- Twitter -->
-                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
+                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
 
                     </div>
                 </div>

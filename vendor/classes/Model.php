@@ -60,4 +60,96 @@ class Model
         /* $this->stock = $stock; */
     }
 
+
+
+    public function getIdModel()
+    {
+        return $this->idModel;
+    }
+
+
+    public function getBrand()
+    {
+        return $this->brand;
+    }
+
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+
+    public function getCurrentPrice()
+    {
+        return $this->currentPrice;
+    }
+
+
+    public function getMegaPixels()
+    {
+        return $this->megaPixels;
+    }
+
+
+    public function getRam()
+    {
+        return $this->ram;
+    }
+
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+
+    public function getResolution()
+    {
+        return $this->resolution;
+    }
+
+    public function getFiveG()
+    {
+        return $this->fiveG;
+    }
+
+    public function getDoubleSim()
+    {
+        return $this->doubleSim;
+    }
+
+    public function getCpuSpeed()
+    {
+        return $this->cpuSpeed;
+    }
+
+    public function getStorage()
+    {
+        return $this->storage;
+    }
+
+
+    public function getCpuType()
+    {
+        return $this->cpuType;
+    }
+
+
+    public function getDimensions()
+    {
+        return $this->dimensions;
+    }
+
+
+    public function getSo()
+    {
+        return $this->so;
+    }
 }
