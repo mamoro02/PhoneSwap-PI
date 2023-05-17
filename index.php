@@ -22,6 +22,11 @@ if (isset($_SESSION['loggedIn'])) {
     $userName = ''; // No hay nombre de usuario
     $logoutLink = '<a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Iniciar sesión</a>';
 }
+
+//EMPIEZA A RELLENAR A PARTIR DE AQUI
+
+
+
 ?>
 <!doctype html>
 <html>

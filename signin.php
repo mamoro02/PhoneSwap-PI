@@ -8,7 +8,7 @@ if (count($_POST) > 0) {
 
     try {
 
-        $client = new Client;
+        $client = new ClientRepository;
 
         $dataClient = [
             'userName' => $_POST['userName'],

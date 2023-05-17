@@ -40,14 +40,9 @@ exit; */
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
-<<<<<<< HEAD
-                    <a class="navbar-brand" href="#">
-                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)" class="d-inline-block align-top" alt="">
-=======
                     <a class="navbar-brand" href="index.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
                             class="d-inline-block align-top" alt="">
->>>>>>> d044f938c21227000c022a1764324b1eec1d39ba
                         <b>Phone Swap</b>
                     </a>
                 </div>
@@ -67,26 +62,13 @@ exit; */
             </nav>
         </div>
     </header>
-<<<<<<< HEAD
-
-=======
     <br>
     <br>
     <main>
        
->>>>>>> d044f938c21227000c022a1764324b1eec1d39ba
     <div class="container-fluid">
         <div class="row" style="height: 110vh; margin-right: 0;">
             <div class="col-md-6">
-<<<<<<< HEAD
-                <img src="imagenes/img/xiaomi/Xiaomi 13.png" alt="Imagen" style="Width: 95%; height:95%; margin-top: 10px;">
-            </div>
-            <div class="col-md-6" style="background-color: rgb(241, 246, 250);">
-                <h2 style="position: absolute; margin-left: 40px; margin-top: 20px; font-size: 25px;">Xiaomi 13</h2>
-                <button class="btn btn-primary">Comprar</button></h2>
-                <p style="position: absolute; margin-left: 40px; padding:10px; margin-top: 30px;"><a href="#">Ficha técnica</a></p>
-
-=======
                     <img src="imagenes/img/xiaomi/Xiaomi13.png" alt="Imagen" style="Width: 95%; height:95%; margin-top: 10px;">
             </div>
             <div class="col-md-6" style="background-color: rgb(241, 246, 250);">
@@ -95,7 +77,6 @@ exit; */
                 <br>
                 <p style="position: absolute; margin-left: 40px; padding:10px; margin-top: 30px;"><a href="fichaTecnica.html">Ficha técnica</a></p>
                 
->>>>>>> d044f938c21227000c022a1764324b1eec1d39ba
                 <!--Prueba de estrellas de valoración-->
 
                 <!--<form>
@@ -115,17 +96,10 @@ exit; */
 
                 <div class="row" style="margin-top: 120px;">
                     <div class="col-md-12 estado-telefono text-center">
-<<<<<<< HEAD
-                        <h2 class="estado-title">Estado del teléfono</h2>
-                        <button type="button" class="btn btn-secondary btn-estado-telefono"><b>Bueno</b></button>
-                        <button type="button" class="btn btn-secondary btn-estado-telefono"><b>Muy bueno</b></button>
-                        <button type="button" class="btn btn-secondary btn-estado-telefono"><b>Excelente</b></button>
-=======
                       <h2 class="estado-title" style="font-family: 'Raleway', sans-serif; font-weight: bold;">Estado del teléfono</h2>
                       <button type="button" class="btn btn-estado-telefono"><b>Bueno</b></button>
                       <button type="button" class="btn btn-estado-telefono"><b>Muy bueno</b></button>
                       <button type="button" class="btn btn-estado-telefono"><b>Excelente</b></button>
->>>>>>> d044f938c21227000c022a1764324b1eec1d39ba
                     </div>
                 </div>
 
@@ -133,17 +107,10 @@ exit; */
 
                 <div class="row">
                     <div class="col-md-12 storage-section text-center">
-<<<<<<< HEAD
-                        <h2 class="storage-title">Almacenamiento</h2>
-                        <button type="button" class="btn btn-secondary storage-button"><b>64GB</b></button>
-                        <button type="button" class="btn btn-secondary storage-button"><b>128GB</b></button>
-                        <button type="button" class="btn btn-secondary storage-button"><b>256GB</b></button>
-=======
                       <h2 class="storage-title">Almacenamiento</h2>
                       <button type="button" class="btn storage-button"><b>64GB</b></button>
                       <button type="button" class="btn storage-button"><b>128GB</b></button>
                       <button type="button" class="btn storage-button"><b>256GB</b></button>
->>>>>>> d044f938c21227000c022a1764324b1eec1d39ba
                     </div>
                 </div>
 
@@ -151,27 +118,6 @@ exit; */
 
                 <div class="row">
                     <div class="col-md-12 colors-container text text-center">
-<<<<<<< HEAD
-                        <h2 class="colors-title">Colores</h2>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Red</b></button>
-                                <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Green</b></button>
-                                <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Purple</b></button>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>White</b></button>
-                                <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Yellow</b></button>
-                                <button class="btn btn-colors  btn-secondary btn-lg m-2"><b>Black</b></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-buy">Comparar</button></h2>
-
-
-
-=======
                       <h2 class="colors-title">Colores</h2>
                       <div class="row">
                         <div class="col-md-12 text-center">
@@ -191,7 +137,6 @@ exit; */
                   <br>
                   
                   
->>>>>>> d044f938c21227000c022a1764324b1eec1d39ba
 
             </div>
         </div>
