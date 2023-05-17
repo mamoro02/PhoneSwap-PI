@@ -82,7 +82,7 @@ exit;  */
             <!--Estadisticas de los productos separados por hr-->
             <div class="row">
                 <div class="col-md-12"  style="height:50px"><h3>Diseño</h3></div>
-                <div class="col-md-4"><h1><?= $currentModel->getModel() ?></h1></div>
+                <div class="col-md-4"><p><?= $currentModel->getModel() ?></p></div>
                 <div class="col-md-4"></div>
             </div><hr>
             <div class="row">
@@ -90,7 +90,7 @@ exit;  */
             </div>
             <div class="row">
                 <div class="col-md-4"  style="height:50px"><h5>Colores</h5></div>
-                <div class="col-md-4"> azul,rojo,negro,morado,blanco,púrpura,verde y amarillo</div>
+                <div class="col-md-4"> AZUL | ROJO | VERDE | NEGRO | BLANCO | PÚRPURA | PLATEADO | DORADO </div>
                 <div class="col-md-4"  style="height:100px"></div>
             </div>
             <div class="row">
