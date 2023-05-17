@@ -10,7 +10,7 @@ $userName = $security->getUserData();
 
 /* var_dump($security->getUserData()); */
 
-session_start();
+/* session_start(); */
 
 // Verificar si el usuario ha iniciado sesión
 if (isset($_SESSION['loggedIn'])) {

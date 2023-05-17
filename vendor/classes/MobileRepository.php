@@ -60,7 +60,7 @@ class MobileRepository extends Connection
             //columna de la card
             $output .= "            <div class='col-md-3 mb-3 text-center'>";
             $output .= "                <div class='card'>";
-            $output .= "                    <img class='img-fluid' alt='100%x280' src='imagenes/img/" . $model->getImage() . "'>";
+            $output .= "                    <a href='Item.php?idModelo=".$model->getIdModel()."'><img class='img-fluid' alt='100%x280' src='imagenes/img/" . $model->getImage() . "'></a>";
             $output .= "                    <div class='card-body'>";
             $output .= "                        <h4 class='card-title'>" . $model->getModel() . "</h4>";
             $output .= "                        <p class='card-text'>" . $model->getDescription() . "</p>";
