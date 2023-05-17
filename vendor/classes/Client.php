@@ -1,33 +1,23 @@
 <?php
 
-class Client extends Connection
+class Client
 {
+    private int $idClient;
+    private int $accountName;
+    private string $email;
+    private string $password;
+    private string $clientName;
+    private string $sureName;
+    private string $phoneNumber;
 
-    public function __construct()
+    public function __construct(int $idClient, int $accountName, string $email, string $password, string $clientName, string $sureName, string $phoneNumber)
     {
-        $this->connect();
-    }
-
-    public function insertClient(array $dataClient): bool
-    {
-        //calculo de idCliente
-        $sql = $this->conn->query("SELECT max(idCliente) as 'maxId' from cliente");
-        $idClient = $sql->fetch(PDO::FETCH_ASSOC);
-        $newIdClient = $idClient['maxId'] + 1;
-
-        //inserción
-
-        $stmtInsert = $this->conn->prepare("INSERT INTO `cliente`(`idCliente`, `nombreCuenta`, `correo`, `contraseña`, `nombreCliente`, `apellido`, `telefono`) VALUES (?,?,?,?,?,?,?)");
-        //vincular parametros
-
-        $stmtInsert->bindParam(1, $newIdClient, PDO::PARAM_INT);
-        $stmtInsert->bindParam(2, $dataClient['userName'], PDO::PARAM_STR);
-        $stmtInsert->bindParam(3, $dataClient['email'], PDO::PARAM_STR);
-        $stmtInsert->bindParam(4, $dataClient['password'], PDO::PARAM_STR);
-        $stmtInsert->bindParam(5, $dataClient['nameClient'], PDO::PARAM_STR);
-        $stmtInsert->bindParam(6, $dataClient['sureName'], PDO::PARAM_STR);
-        $stmtInsert->bindParam(7, $dataClient['telephone'], PDO::PARAM_INT);
-
-        return $stmtInsert->execute();
+        $this->idClient = $idClient;
+        $this->accountName = $accountName;
+        $this->email = $email;
+        $this->password = $password;
+        $this->clientName = $clientName;
+        $this->sureName = $sureName;
+        $this->phoneNumber = $phoneNumber;
     }
 }
