@@ -64,7 +64,7 @@ class MobileRepository extends Connection
             $output .= "                    <div class='card-body'>";
             $output .= "                        <h4 class='card-title'>" . $model->getModel() . "</h4>";
             $output .= "                        <p class='card-text'>" . $model->getDescription() . "</p>";
-            $output .= "                        <a href='item.php?idModelo=" . $model->getIdModel() . "' class='btn btn-primary r'>Detalles</a>";
+            $output .= "                        <a href='fichaTecnica.php?idModelo=" . $model->getIdModel() . "' class='btn btn-primary r'>Detalles</a>";
             $output .= "                    </div>";
             $output .= "                    <div class='card-footer text-muted'>" . $model->getCurrentPrice() . "</div>";
             $output .= "                </div>"; //cierre de la card

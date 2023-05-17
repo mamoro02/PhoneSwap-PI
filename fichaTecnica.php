@@ -1,3 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . "/vendor/autoload.php";
+
+$idModelo = isset($_GET['idModelo']) ? (int) $_GET['idModelo'] : "";
+
+$mobileRepository = new MobileRepository;
+
+$currentModel = $mobileRepository->getModel($idModelo);
+
+$fiveG = ($currentModel->getFiveG() == true) ? 'SI' : 'NO';
+
+$doubleSim = ($currentModel->getDoubleSim() == true) ? 'SI': 'NO';
+
+/* var_dump($mobileRepository->getModel($idModelo));
+exit;  */
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +38,7 @@
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1 ">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0); margin-right: 5px;"
                             class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
@@ -62,7 +82,7 @@
             <!--Estadisticas de los productos separados por hr-->
             <div class="row">
                 <div class="col-md-12"  style="height:50px"><h3>Diseño</h3></div>
-                <div class="col-md-4"><p>modelo</p></div>
+                <div class="col-md-4"><h1><?= $currentModel->getModel() ?></h1></div>
                 <div class="col-md-4"></div>
             </div><hr>
             <div class="row">
@@ -70,7 +90,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4"  style="height:50px"><h5>Colores</h5></div>
-                <div class="col-md-4"> Colores disponibles</div>
+                <div class="col-md-4"> azul,rojo,negro,morado,blanco,púrpura,verde y amarillo</div>
                 <div class="col-md-4"  style="height:100px"></div>
             </div>
             <div class="row">
@@ -78,7 +98,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12"><h3>Especificación</h3></div>
-                <div class="col-md-4"><p>modelo</p></div>
+                <div class="col-md-4"><p><?= $currentModel->getModel() ?> </p></div>
                 <div class="col-md-4"></div>
             </div><hr>
             <div class="row">
@@ -86,8 +106,8 @@
             </div>
             <div class="row">
                 <div class="col-md-4"><h5>Procesador</h5></div>
-                <div class="col-md-4">Velocidad CPU <br> Info</div>
-                <div class="col-md-4">Tipo CPU <br> Info </div>
+                <div class="col-md-4">Velocidad CPU <br> <?= $currentModel->getCpuSpeed() ?></div>
+                <div class="col-md-4">Tipo CPU <br><?= $currentModel->getCpuType() ?></div>
             </div><hr>
             <div class="row">
                 <div class="col-md-12"></div>
@@ -95,14 +115,14 @@
             <div class="row">
                 <div class="col-md-4"><h5>Pantalla</h5></div>
                 <div class="col-md-4">Tamaño<br> Info (pulgadas)</div>
-                <div class="col-md-4">Resolución <br> Info </div>
+                <div class="col-md-4">Resolución <br> <?= $currentModel->getResolution() ?></div>
             </div><hr>
             <div class="row">
                 <div class="col-md-12"></div>
             </div>
             <div class="row">
                 <div class="col-md-4"><h5>Cámara</h5></div>
-                <div class="col-md-4">Mega Píxeles <br> Info</div>
+                <div class="col-md-4">Mega Píxeles <br> <?= $currentModel->getMegaPixels() ?></div>
                 <div class="col-md-4"></div>
             </div><hr>
             <div class="row">
@@ -110,16 +130,16 @@
             </div>
             <div class="row">
                 <div class="col-md-4"><h5>Almacenamiento</h5></div>
-                <div class="col-md-4"> Capacidad<br>Info </div>
-                <div class="col-md-4">Memoria RAM <br> Info </div>
+                <div class="col-md-4"> Capacidad<br><?= $currentModel->getStorage() ?> </div>
+                <div class="col-md-4">Memoria RAM <br> <?= $currentModel->getRam() ?> </div>
             </div><hr>
             <div class="row">
                 <div class="col-md-12"></div>
             </div>
             <div class="row">
                 <div class="col-md-4"><h5>Redes/Bandas</h5></div>
-                <div class="col-md-4">Doble Sim<br> Info</div>
-                <div class="col-md-4"> 5G </div>
+                <div class="col-md-4">Doble Sim: <?= $doubleSim ?></div>
+                <div class="col-md-4"> 5G: <?= $fiveG ?> </div>
  
             </div><hr>
             <div class="row">
@@ -127,7 +147,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4"><h5>Sistema Operativo</h5></div>
-                <div class="col-md-4"> INFO </div>
+                <div class="col-md-4"> <?= $currentModel->getSo() ?> </div>
                 <div class="col-md-4"></div>
             </div><hr>
             <div class="row">
@@ -135,7 +155,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4"><h5>Especificaciones físicas</h5></div>
-                <div class="col-md-4"> Dimensiones<br>Info </div>
+                <div class="col-md-4"> Dimensiones<br><?= $currentModel->getDimensions() ?> </div>
                 <div class="col-md-4"> </div>
 
             </div><hr>
