@@ -89,6 +89,7 @@ exit; */
                         <a class="dropdown-item" href="#">Samsung</a>
                         <a class="dropdown-item" href="#">Huawei</a>
                         <a class="dropdown-item" href="#">Xiaomi</a>
+                        <a class="dropdown-item" href="#">Otros</a>
                     </div>
                 </div>
                 <!-- Icono login y enlace a login.php -->
