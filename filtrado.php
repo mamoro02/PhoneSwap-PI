@@ -52,6 +52,7 @@ $mobilesByBrand = $mobileRepository->getModelByBrand($idMarca);
 exit; */
 
 
+
 ?>
 <!doctype html>
 <html>

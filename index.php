@@ -45,7 +45,6 @@ exit; */
 
 $brands = $mobileRepository->getBrands();
 
-
 ?>
 <!doctype html>
 <html>
