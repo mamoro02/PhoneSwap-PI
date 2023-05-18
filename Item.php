@@ -76,7 +76,7 @@ exit; */
             </div>
             <div class="col-md-6" style="background-color: rgb(241, 246, 250);">
                 <h2 style="position: absolute; margin-left: 40px; margin-top: 20px; font-size: 25px; "><?= $currentModel->getModel() ?></h2>
-                <button class="btn btn-buy">Comprar</button></h2>
+                <a href="carritoCompra.html"><button class="btn btn-buy">Comprar</button></h2></a>
                 <br>
                 <p style="position: absolute; margin-left: 40px; padding:10px; margin-top: 30px;"><a <?= "href='fichaTecnica.php?idModelo=".$currentModel->getIdModel()."'" ?>>Ficha técnica</a></p>
                 

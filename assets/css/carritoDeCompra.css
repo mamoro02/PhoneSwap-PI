@@ -1,0 +1,71 @@
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 80px;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+}
+
+h2{
+  font-size: 34px;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+}
+button {
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 5px 20px;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+td {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+td:first-child {
+  display: flex;
+  align-items: center;
+}
+
+td img {
+  margin-right: 20px;
+}
+
+td h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.qty-btn {
+  border: none;
+  background-color:rgb(255, 255, 255);
+}
+.checkout-btn {
+  display: block;
+  margin: 0 auto;
+  color: #fdfdfd;
+  background-color: #000000;
+  border-radius: 5px;
+  text-decoration: none;
+}

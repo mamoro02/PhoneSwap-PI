@@ -1,0 +1,50 @@
+button {
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 5px 20px;
+	font-weight: bold;
+	border-radius: 5px;
+	cursor: pointer;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
+h1 {
+  font-size: 50px;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+ text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+}
+
+th {
+  color: #ffffff;
+  background-color: #090909;
+}
+
+.columna1 {
+  width: 50%;
+}
+
+
+
