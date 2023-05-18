@@ -91,7 +91,7 @@ exit; */
                 <!-- Barra de busqueda -->
                 <div class="dropdown show">
                     <a class="btn btn-secondary btn-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Filtrado de moviles
+                        Seleccione la marca
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
