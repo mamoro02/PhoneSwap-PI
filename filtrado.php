@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require_once __DIR__ . "/vendor/autoload.php";
 
+$idMarca = isset($_GET['idMarca']) ? (int) $_GET['idMarca'] : ""; //PASARSELO A LA FUNCION GETMODELBYMARCA
+
 $security = new Security;
 
 $userName = $security->getUserData();
@@ -25,7 +27,6 @@ if (isset($_SESSION['loggedIn'])) {
 
 //EMPIEZA A RELLENAR A PARTIR DE AQUI
 
-require_once __DIR__ . "/vendor/autoload.php";
 
 $security = new Security;
 
@@ -45,6 +46,11 @@ exit; */
 
 $brands = $mobileRepository->getBrands();
 
+$mobilesByBrand = $mobileRepository->getModelByBrand($idMarca);
+
+/* var_dump($mobilesByBrand);
+exit; */
+
 
 ?>
 <!doctype html>
@@ -53,7 +59,7 @@ $brands = $mobileRepository->getBrands();
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Phone Swap</title>
+    <title>Phone Swap-filtrado</title>
     <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
 
@@ -134,6 +140,7 @@ $brands = $mobileRepository->getBrands();
 
     </header>
     <main>
+        <!-- AQUI VA LA CARD -->
         <section class="pt-5 pb-5">
             <div class="container">
                 <div class="row">
@@ -153,7 +160,7 @@ $brands = $mobileRepository->getBrands();
 
                             <div class="carousel-inner">
 
-                            <?= $mobileRepository->drawModels($dataModels) ?>
+                            <?= $mobileRepository->drawModelsByBrand($mobilesByBrand) ?>
 
                             </div>
                         </div>
@@ -161,6 +168,7 @@ $brands = $mobileRepository->getBrands();
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="text-white text-center text-lg-start bg-dark">
