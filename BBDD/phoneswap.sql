@@ -1,182 +1,158 @@
-drop database if exists phoneswap;
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 18-05-2023 a las 12:33:04
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
-CREATE DATABASE phoneswap;
-
-use phoneswap;
-
-drop table if exists cliente;
-
-CREATE TABLE cliente(
-	idCliente int primary key, 
-	nombreCuenta varchar(30), 
-	correo varchar(50), 
-	contraseña varchar(15), 
-	nombreCliente varchar(30),
-	apellido varchar(30), 
-	telefono int
-); 
-
-drop table if exists marca;
-
-CREATE TABLE marca(
-	idMarca int primary key,
-    nombreMarca varchar(30)
-);
-
-insert into marca values(1, 'Huawei');
-insert into marca values(2, 'Apple');
-insert into marca values(3, 'Samsung');
-insert into marca values(4, 'Xiaomi');
-insert into marca values(5, 'Otros');
-
-drop table if exists modelo;
-
-CREATE TABLE modelo(
-	idModelo int primary key, 
-	marca int not null, 
-	descripcion varchar(30), 
-	modelo varchar(30),
-    precioActual float,
-	megaPixeles varchar(10), 
-	ram varchar(10), 
-	imagen varchar(20), 
-	resolucion varchar(10), 
-	cincoG bool, 
-	dobleSim bool, 
-	velocidadCpu varchar(10), 
-	capacidad varchar(10),
-	tipoCpu varchar(20),
-	dimensiones varchar(15), 
-	sistemaOperativo varchar(15),
-    constraint fk_marca foreign key (marca) references marca(idMarca)
-);
-#inserts huawei
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (1, 1, 'P30 Lite', 'p30Lite', 349.99, '48 MP', '4 GB', 'p30Lite.png', '1080 x 2312', true, true, '2.2 GHz', '128 GB', 'Kirin 710', '152.9 x 72.7 x 7.4 mm', 'Android');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (2, 1, 'P40', 'p40', 599.99, '50 MP', '6 GB', 'p40.png', '1080 x 2340', true, true, '2.86 GHz', '128 GB', 'Kirin 990 5G', '148.9 x 71.1 x 8.5 mm', 'Android');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (3, 1, 'P40 Lite', 'p40Lite', 299.99, '48 MP', '6 GB', 'p40Lite.png', '1080 x 2310', true, true, '2.27 GHz', '128 GB', 'Kirin 810', '159.2 x 76.3 x 8.7 mm', 'Android');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (4, 1, 'P40 Pro', 'p40pro', 899.99, '50 MP', '8 GB', 'p40pro.png', '1200 x 2640', true, true, '2.86 GHz', '256 GB', 'Kirin 990 5G', '158.2 x 72.6 x 9 mm', 'Android');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (5, 1, 'P50', 'p50', 1199.99, '50 MP', '8 GB', 'p50.png', '1224 x 2700', true, true, '3.13 GHz', '256 GB', 'Kirin 9000', '156.7 x 74 x 8.3 mm', 'Android');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (6, 1, 'Smartphone de alta gama', 'P40 Lite', 399.99, '64 MP', '6 GB', 'p40Lite.png', '1080 x 2310', true, false, '2.27 GHz', '128 GB', 'Kirin 810', '159.2 x 76.3 x 8.7 mm', 'Android 10, EMUI 10.1, sin servicios de Google');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (7, 1, 'Smartphone de alta gama', 'P40 Lite', 399.99, '64 MP', '6 GB', 'p40Lite.png', '1080 x 2310', true, false, '2.27 GHz', '128 GB', 'Kirin 810', '159.2 x 76.3 x 8.7 mm', 'Android 10, EMUI 10.1, sin servicios de Google');
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (8, 1, 'Smartphone de alta gama', 'P40', 599.99, '50 MP', '8 GB', 'p40.png', '1080 x 2340', true, true, '2.86 GHz', '128 GB', 'Kirin 990 5G', '148.9 x 71.1 x 8.5 mm', 'Android 10, EMUI 10.1, sin servicios de Google');
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Base de datos: `phoneswap`
+--
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (9, 1, 'Smartphone de alta gama', 'P40 Pro', 799.99, '50 MP', '8 GB', 'p40pro.png', '1200 x 2640', true, true, '2.86 GHz', '256 GB', 'Kirin 990 5G', '158.2 x 72.6 x 9 mm', 'Android 10, EMUI 10.1, sin servicios de Google');
+-- --------------------------------------------------------
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (10, 1, 'Smartphone de alta gama', 'P50', 899.99, '50 MP', '8 GB', 'p50.png', '1224 x 2700', true, true, '2.84 GHz', '128 GB', 'Kirin 9000 5G', '156.7 x 74 x 8.3 mm', 'Android 11, HarmonyOS 2.0');
+--
+-- Estructura de tabla para la tabla `cliente`
+--
 
-#inserts para iphone
+CREATE TABLE `cliente` (
+  `idCliente` int(11) NOT NULL,
+  `nombreCuenta` varchar(30) DEFAULT NULL,
+  `correo` varchar(50) DEFAULT NULL,
+  `contraseña` varchar(15) DEFAULT NULL,
+  `nombreCliente` varchar(30) DEFAULT NULL,
+  `apellido` varchar(30) DEFAULT NULL,
+  `telefono` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO modelo VALUES (11, 2, 'iPhone 13', 'iPhone 13', 999.99, '12', '6GB', 'iphone13.png', '1080p', true, false, '2.5GHz', '256GB', 'A14 Bionic', '146.7 x 71.5 x 7.65 mm', 'iOS 15');
-INSERT INTO modelo VALUES (12, 2, 'iPhone 14', 'iPhone 14', 1199.99, '14', '8GB', 'iphone14.png', '1440p', true, false, '3.0GHz', '512GB', 'A16 Bionic', '150.9 x 75.7 x 8.3 mm', 'iOS 16');
-INSERT INTO modelo VALUES (13, 2, 'iPhone SE', 'iPhone SE', 499.99, '12', '4GB', 'iphonese.png', '720p', true, false, '2.3GHz', '128GB', 'A13 Bionic', '138.4 x 67.3 x 7.3 mm', 'iOS 15');
-INSERT INTO modelo VALUES (14, 2, 'iPhone 13 Mini', 'iPhone 13 Mini', 799.99, '12', '6GB', 'iphone13mini.png', '1080p', true, false, '2.5GHz', '256GB', 'A14 Bionic', '131.5 x 64.2 x 7.65 mm', 'iOS 15');
-INSERT INTO modelo VALUES (15, 2, 'iPhone X', 'iPhone X', 599.99, '12', '3GB', 'iphonex.png', '1080p', false, false, '2.39GHz', '64GB', 'A11 Bionic', '143.6 x 70.9 x 7.7 mm', 'iOS 11');
-INSERT INTO modelo VALUES (16, 2, 'iPhone XR', 'iPhone XR', 699.99, '12', '4GB', 'iphonexr.png', '720p', false, false, '2.49GHz', '128GB', 'A12 Bionic', '150.9 x 75.7 x 8.3 mm', 'iOS 12');
-INSERT INTO modelo VALUES (17, 2, 'iPhone 14 Pro', 'iPhone 14 Pro', 1499.99, '16', '12GB', 'iphone14pro.png', '2160p', true, true, '3.5GHz', '1TB', 'A16 Bionic', '150.5 x 74.7 x 7.65 mm', 'iOS 16');
-INSERT INTO modelo VALUES (18, 2, 'iPhone 12', 'iPhone 12', 799.99, '12', '4GB', 'iphone12.png', '1080p', true, false, '2.4GHz', '128GB', 'A14 Bionic', '146.7 x 71.5 x 7.4 mm', 'iOS 14');
-INSERT INTO modelo VALUES (19, 2, 'iPhone 14 Pro Max', 'iPhone 14 Pro Max', 1799.99, '16', '12GB', 'iphone14pro.png', '2160p', true, true, '3.5GHz', '2TB', 'A16 Bionic', '160.8 x 78.1 x 7.65 mm', 'iOS 16.5');
+--
+-- Volcado de datos para la tabla `cliente`
+--
 
-#inserts para samsung
+INSERT INTO `cliente` (`idCliente`, `nombreCuenta`, `correo`, `contraseña`, `nombreCliente`, `apellido`, `telefono`) VALUES
+(1, 'cafema', 'carlos@gmail.com', '1234', 'Carlos', 'Ferrer', 622723498);
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (20, 3, 'Galaxy Z Flip', 'Galaxy Z Flip', 1099.99, '12', '8GB', 'samsungZflip.png', '1080 x 2636', true, true, '2.95 GHz', '256GB', 'Qualcomm Snapdragon 855+', '87.4 x 73.6 x 17.3 mm', 'Android 10');
+-- --------------------------------------------------------
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (21, 3, 'Galaxy S23 Ultra', 'Galaxy S23 Ultra', 1599.99, '108', '16GB', 'samsungGalaxyS23Ultra.png', '1440 x 3200', true, true, '2.9 GHz', '512GB', 'Exynos 2200', '164.6 x 73.4 x 8.9 mm', 'Android 13');
+--
+-- Estructura de tabla para la tabla `marca`
+--
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (22, 3, 'Galaxy S23 Plus', 'Galaxy S23 Plus', 1399.99, '108', '12GB', 'samsungGalaxyS23Plus.png', '1440 x 3200', true, true, '2.9 GHz', '256GB', 'Exynos 2200', '164.6 x 73.4 x 8.9 mm', 'Android 13');
+CREATE TABLE `marca` (
+  `idMarca` int(11) NOT NULL,
+  `nombreMarca` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (23, 3, 'Galaxy S22', 'Galaxy S22', 999.99, '64', '8GB', 'samsungGalaxyS22.png', '1080 x 2400', true, true, '2.4 GHz', '128GB', 'Exynos 2100', '151.7 x 71.2 x 7.9 mm', 'Android 12');
+--
+-- Volcado de datos para la tabla `marca`
+--
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (24, 3, 'Galaxy S21 FE', 'Galaxy S21 FE', 699.99, '64', '6GB', 'samsungGalaxyS21Fe.png', '1080 x 2400', true, true, '2.4 GHz', '128GB', 'Qualcomm Snapdragon 888', '160.9 x 73.2 x 8.3 mm', 'Android 11');
+INSERT INTO `marca` (`idMarca`, `nombreMarca`) VALUES
+(1, 'Huawei'),
+(2, 'Apple'),
+(3, 'Samsung'),
+(4, 'Xiaomi'),
+(5, 'Otros');
 
-#insert para nothing
+-- --------------------------------------------------------
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (25, 5, 'Smartphone sin igual', 'NothingPhone', 899.99, '108 MP', '8 GB', 'nothingPhone.png', '1440 x 3200', true, false, '2.84 GHz', '256 GB', 'Qualcomm Snapdragon 888', '163.7 x 76.4 x 8.8 mm', 'Android 11');
+--
+-- Estructura de tabla para la tabla `modelo`
+--
 
-#insert para honor
+CREATE TABLE `modelo` (
+  `idModelo` int(11) NOT NULL,
+  `marca` int(11) NOT NULL,
+  `descripcion` varchar(30) DEFAULT NULL,
+  `modelo` varchar(30) DEFAULT NULL,
+  `precioActual` float DEFAULT NULL,
+  `megaPixeles` varchar(10) DEFAULT NULL,
+  `ram` varchar(10) DEFAULT NULL,
+  `imagen` varchar(100) DEFAULT NULL,
+  `resolucion` varchar(10) DEFAULT NULL,
+  `cincoG` tinyint(1) DEFAULT NULL,
+  `dobleSim` tinyint(1) DEFAULT NULL,
+  `velocidadCpu` varchar(10) DEFAULT NULL,
+  `capacidad` varchar(10) DEFAULT NULL,
+  `tipoCpu` varchar(20) DEFAULT NULL,
+  `dimensiones` varchar(15) DEFAULT NULL,
+  `sistemaOperativo` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (26, 3, 'Innovación tecnológica', 'Honor Magic 5', 799.99, '64 MP', '6 GB', 'honormagic5.png', '1080 x 2400', true, false, '2.6 GHz', '128 GB', 'Kirin 990', '157.2 x 73.2 x 8 mm', 'Android 10');
+--
+-- Volcado de datos para la tabla `modelo`
+--
 
-#insert para poco
+INSERT INTO `modelo` (`idModelo`, `marca`, `descripcion`, `modelo`, `precioActual`, `megaPixeles`, `ram`, `imagen`, `resolucion`, `cincoG`, `dobleSim`, `velocidadCpu`, `capacidad`, `tipoCpu`, `dimensiones`, `sistemaOperativo`) VALUES
+(1, 1, 'P30 Lite', 'p30Lite', 349.99, '48 MP', '4 GB', 'p30Lite.png', '1080 x 231', 1, 1, '2.2 GHz', '128 GB', 'Kirin 710', '152.9 x 72.7 x ', 'Android'),
+(2, 1, 'P40', 'p40', 599.99, '50 MP', '6 GB', 'p40.png', '1080 x 234', 1, 1, '2.86 GHz', '128 GB', 'Kirin 990 5G', '148.9 x 71.1 x ', 'Android'),
+(3, 1, 'P40 Lite', 'p40Lite', 299.99, '48 MP', '6 GB', 'p40Lite.png', '1080 x 231', 1, 1, '2.27 GHz', '128 GB', 'Kirin 810', '159.2 x 76.3 x ', 'Android'),
+(4, 1, 'P40 Pro', 'p40pro', 899.99, '50 MP', '8 GB', 'p40pro.png', '1200 x 264', 1, 1, '2.86 GHz', '256 GB', 'Kirin 990 5G', '158.2 x 72.6 x ', 'Android'),
+(5, 1, 'P50', 'p50', 1199.99, '50 MP', '8 GB', 'p50.png', '1224 x 270', 1, 1, '3.13 GHz', '256 GB', 'Kirin 9000', '156.7 x 74 x 8.', 'Android'),
+(6, 1, 'Smartphone de alta gama', 'P40 Lite', 399.99, '64 MP', '6 GB', 'p40Lite.png', '1080 x 231', 1, 0, '2.27 GHz', '128 GB', 'Kirin 810', '159.2 x 76.3 x ', 'Android 10, EMU'),
+(7, 1, 'Smartphone de alta gama', 'P40 Lite', 399.99, '64 MP', '6 GB', 'p40Lite.png', '1080 x 231', 1, 0, '2.27 GHz', '128 GB', 'Kirin 810', '159.2 x 76.3 x ', 'Android 10, EMU'),
+(8, 1, 'Smartphone de alta gama', 'P40', 599.99, '50 MP', '8 GB', 'p40.png', '1080 x 234', 1, 1, '2.86 GHz', '128 GB', 'Kirin 990 5G', '148.9 x 71.1 x ', 'Android 10, EMU'),
+(9, 1, 'Smartphone de alta gama', 'P40 Pro', 799.99, '50 MP', '8 GB', 'p40pro.png', '1200 x 264', 1, 1, '2.86 GHz', '256 GB', 'Kirin 990 5G', '158.2 x 72.6 x ', 'Android 10, EMU'),
+(10, 1, 'Smartphone de alta gama', 'P50', 899.99, '50 MP', '8 GB', 'p50.png', '1224 x 270', 1, 1, '2.84 GHz', '128 GB', 'Kirin 9000 5G', '156.7 x 74 x 8.', 'Android 11, Har'),
+(11, 2, 'iPhone 13', 'iPhone 13', 999.99, '12', '6GB', 'iphone13.png', '1080p', 1, 0, '2.5GHz', '256GB', 'A14 Bionic', '146.7 x 71.5 x ', 'iOS 15'),
+(12, 2, 'iPhone 14', 'iPhone 14', 1199.99, '14', '8GB', 'iphone14.png', '1440p', 1, 0, '3.0GHz', '512GB', 'A16 Bionic', '150.9 x 75.7 x ', 'iOS 16'),
+(13, 2, 'iPhone SE', 'iPhone SE', 499.99, '12', '4GB', 'iphonese.png', '720p', 1, 0, '2.3GHz', '128GB', 'A13 Bionic', '138.4 x 67.3 x ', 'iOS 15'),
+(14, 2, 'iPhone 13 Mini', 'iPhone 13 Mini', 799.99, '12', '6GB', 'iphone13mini.png', '1080p', 1, 0, '2.5GHz', '256GB', 'A14 Bionic', '131.5 x 64.2 x ', 'iOS 15'),
+(15, 2, 'iPhone X', 'iPhone X', 599.99, '12', '3GB', 'iphonex.png', '1080p', 0, 0, '2.39GHz', '64GB', 'A11 Bionic', '143.6 x 70.9 x ', 'iOS 11'),
+(16, 2, 'iPhone XR', 'iPhone XR', 699.99, '12', '4GB', 'iphonexr.png', '720p', 0, 0, '2.49GHz', '128GB', 'A12 Bionic', '150.9 x 75.7 x ', 'iOS 12'),
+(17, 2, 'iPhone 14 Pro', 'iPhone 14 Pro', 1499.99, '16', '12GB', 'iphone14pro.png', '2160p', 1, 1, '3.5GHz', '1TB', 'A16 Bionic', '150.5 x 74.7 x ', 'iOS 16'),
+(18, 2, 'iPhone 12', 'iPhone 12', 799.99, '12', '4GB', 'iphone12.png', '1080p', 1, 0, '2.4GHz', '128GB', 'A14 Bionic', '146.7 x 71.5 x ', 'iOS 14'),
+(19, 2, 'iPhone 14 Pro Max', 'iPhone 14 Pro Max', 1799.99, '16', '12GB', 'iphone14pro.png', '2160p', 1, 1, '3.5GHz', '2TB', 'A16 Bionic', '160.8 x 78.1 x ', 'iOS 16.5'),
+(20, 3, 'Galaxy Z Flip', 'Galaxy Z Flip', 1099.99, '12', '8GB', 'samsungZflip.png', '1080 x 263', 1, 1, '2.95 GHz', '256GB', 'Qualcomm Snapdragon ', '87.4 x 73.6 x 1', 'Android 10'),
+(21, 3, 'Galaxy S23 Ultra', 'Galaxy S23 Ultra', 1599.99, '108', '16GB', 'samsungGalaxyS23Ultra.png', '1440 x 320', 1, 1, '2.9 GHz', '512GB', 'Exynos 2200', '164.6 x 73.4 x ', 'Android 13'),
+(22, 3, 'Galaxy S23 Plus', 'Galaxy S23 Plus', 1399.99, '108', '12GB', 'samsungGalaxyS23Plus.png', '1440 x 320', 1, 1, '2.9 GHz', '256GB', 'Exynos 2200', '164.6 x 73.4 x ', 'Android 13'),
+(23, 3, 'Galaxy S22', 'Galaxy S22', 999.99, '64', '8GB', 'samsungGalaxyS22.png', '1080 x 240', 1, 1, '2.4 GHz', '128GB', 'Exynos 2100', '151.7 x 71.2 x ', 'Android 12'),
+(24, 3, 'Galaxy S21 FE', 'Galaxy S21 FE', 699.99, '64', '6GB', 'samsungGalaxyS21Fe.png', '1080 x 240', 1, 1, '2.4 GHz', '128GB', 'Qualcomm Snapdragon ', '160.9 x 73.2 x ', 'Android 11'),
+(25, 5, 'Smartphone sin igual', 'NothingPhone', 899.99, '108 MP', '8 GB', 'nothingPhone.png', '1440 x 320', 1, 0, '2.84 GHz', '256 GB', 'Qualcomm Snapdragon ', '163.7 x 76.4 x ', 'Android 11'),
+(26, 3, 'Innovación tecnológica', 'Honor Magic 5', 799.99, '64 MP', '6 GB', 'honormagic5.png', '1080 x 240', 1, 0, '2.6 GHz', '128 GB', 'Kirin 990', '157.2 x 73.2 x ', 'Android 10'),
+(27, 5, 'La bestia de Poco', 'Poco X5', 549.99, '48 MP', '6 GB', 'pocoX5.png', '1080 x 240', 1, 1, '2.3 GHz', '128 GB', 'Qualcomm Snapdragon ', '164.2 x 76.5 x ', 'Android 11'),
+(28, 5, 'Potencia y estilo', 'Realme Narzo 50A', 199.99, '50 MP', '4 GB', 'realmeNarzo50A.png', '720 x 1600', 0, 1, '2.0 GHz', '64 GB', 'MediaTek Helio G85', '164.5 x 75.9 x ', 'Android 11'),
+(29, 4, 'Smartphone de alta gama', 'Poco F4 GT', 599.99, '64 MP', '8 GB', 'PocoF4GT.png', '1080', 1, 1, '2.8GHz', '256GB', 'Snapdragon 870', '163.7 x 76.4 x ', 'Android 11'),
+(30, 4, 'Smartphone de alta gama', 'Poco X5 5G', 399.99, '48 MP', '6 GB', 'PocoX55G.png', '1080', 1, 1, '2.0GHz', '128GB', 'Mediatek Helio G85', '164.2 x 75.9 x ', 'Android 11'),
+(31, 4, 'Smartphone de gama media', 'Redmi 10 (2022)', 199.99, '50 MP', '4 GB', 'Redmi102022.png', '1080', 1, 1, '2.0GHz', '64GB', 'Mediatek Helio G88', '161.2 x 75.6 x ', 'Android 11'),
+(32, 4, 'Smartphone de alta gama', 'Redmi Note 11 Pro+ 5G', 899.99, '108 MP', '12 GB', 'RedmiNote11Pro+5G.png', '1080', 1, 1, '3.0GHz', '512GB', 'Snapdragon 870', '164.2 x 75.9 x ', 'Android 11'),
+(33, 4, 'Smartphone de gama media', 'Redmi Note 12', 349.99, '64 MP', '4 GB', 'RedmiNote12.png', '1080', 1, 1, '2.5GHz', '128GB', 'Mediatek Helio G96', '161.1 x 75.2 x ', 'Android 11'),
+(34, 4, 'Redmi Note 13 Pro', 'Redmi Note 13 Pro', 499.99, '108 MP', '12 GB', 'RedmiNote13Pro.png', '1080p', 1, 1, '2.5GHz', '512 GB', 'Snapdragon 888+', '163.9 x 75.7 x ', 'Android 13'),
+(35, 4, 'Xiaomi Mi Mix 4', 'Mi Mix 4', 1299.99, '108 MP', '16 GB', 'XiaomiMiMix4.png', '1440p', 1, 1, '3.2GHz', '1 TB', 'Snapdragon 898', '165.4 x 75.5 x ', 'Android 13'),
+(36, 4, 'Xiaomi Mi 13 Lite', 'Mi 13 Lite', 399.99, '64 MP', '6 GB', 'XiaomiMi13Lite.png', '1080p', 1, 1, '2.3GHz', '128 GB', 'Snapdragon 778G', '160.5 x 75.7 x ', 'Android 12'),
+(37, 4, 'Xiaomi Poco F5', 'Poco F5', 449.99, '64 MP', '8 GB', 'PocoF5.png', '1080p', 1, 1, '2.8GHz', '256 GB', 'Snapdragon 870', '160.6 x 75.5 x ', 'Android 12'),
+(38, 4, 'Redmi Note 13', 'Redmi Note 13', 299.99, '48 MP', '4 GB', 'RedmiNote13.png', '720p', 1, 1, '2.0GHz', '64 GB', 'Mediatek Helio G88', '161.9 x 75.2 x ', 'Android 12');
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (27, 5, 'La bestia de Poco', 'Poco X5', 549.99, '48 MP', '6 GB', 'pocoX5.png', '1080 x 2400', true, true, '2.3 GHz', '128 GB', 'Qualcomm Snapdragon 732G', '164.2 x 76.5 x 9.3 mm', 'Android 11');
+-- --------------------------------------------------------
 
-#insert para realme
+--
+-- Estructura de tabla para la tabla `movil`
+--
 
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (28, 5, 'Potencia y estilo', 'Realme Narzo 50A', 199.99, '50 MP', '4 GB', 'realmeNarzo50A.png', '720 x 1600', false, true, '2.0 GHz', '64 GB', 'MediaTek Helio G85', '164.5 x 75.9 x 9.8 mm', 'Android 11');
+CREATE TABLE `movil` (
+  `numSerie` varchar(30) NOT NULL,
+  `idModelo` int(11) DEFAULT NULL,
+  `idCliente` int(11) DEFAULT NULL,
+  `precioVenta` float DEFAULT NULL,
+  `fechaVenta` date DEFAULT NULL,
+  `comentarios` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-#insertar para xiaomi
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (29, 4, 'Smartphone de alta gama', 'Poco F4 GT', 599.99, '64 MP', '8 GB', 'PocoF4GT.png', '1080', true, true, '2.8GHz', '256GB', 'Snapdragon 870', '163.7 x 76.4 x 8.8 mm', 'Android 11');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (30, 4, 'Smartphone de alta gama', 'Poco X5 5G', 399.99, '48 MP', '6 GB', 'PocoX55G.png', '1080', true, true, '2.0GHz', '128GB', 'Mediatek Helio G85', '164.2 x 75.9 x 9.2 mm', 'Android 11');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (31, 4, 'Smartphone de gama media', 'Redmi 10 (2022)', 199.99, '50 MP', '4 GB', 'Redmi102022.png', '1080', true, true, '2.0GHz', '64GB', 'Mediatek Helio G88', '161.2 x 75.6 x 9.1 mm', 'Android 11');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (32, 4, 'Smartphone de alta gama', 'Redmi Note 11 Pro+ 5G', 899.99, '108 MP', '12 GB', 'RedmiNote11Pro+5G.png', '1080', true, true, '3.0GHz', '512GB', 'Snapdragon 870', '164.2 x 75.9 x 8.5 mm', 'Android 11');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo) 
-VALUES (33, 4, 'Smartphone de gama media', 'Redmi Note 12', 349.99, '64 MP', '4 GB', 'RedmiNote12.png', '1080', true, true, '2.5GHz', '128GB', 'Mediatek Helio G96', '161.1 x 75.2 x 8.5 mm', 'Android 11');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (34, 4, 'Redmi Note 13 Pro', 'Redmi Note 13 Pro', 499.99, '108 MP', '12 GB', 'RedmiNote13Pro.png', '1080p', true, true, '2.5GHz', '512 GB', 'Snapdragon 888+', '163.9 x 75.7 x 8.9 mm', 'Android 13');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (35, 4, 'Xiaomi Mi Mix 4', 'Mi Mix 4', 1299.99, '108 MP', '16 GB', 'XiaomiMiMix4.png', '1440p', true, true, '3.2GHz', '1 TB', 'Snapdragon 898', '165.4 x 75.5 x 8.9 mm', 'Android 13');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (36, 4, 'Xiaomi Mi 13 Lite', 'Mi 13 Lite', 399.99, '64 MP', '6 GB', 'XiaomiMi13Lite.png', '1080p', true, true, '2.3GHz', '128 GB', 'Snapdragon 778G', '160.5 x 75.7 x 7.6 mm', 'Android 12');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (37, 4, 'Xiaomi Poco F5', 'Poco F5', 449.99, '64 MP', '8 GB', 'PocoF5.png', '1080p', true, true, '2.8GHz', '256 GB', 'Snapdragon 870', '160.6 x 75.5 x 7.8 mm', 'Android 12');
-
-INSERT INTO modelo (idModelo, marca, descripcion, modelo, precioActual, megaPixeles, ram, imagen, resolucion, cincoG, dobleSim, velocidadCpu, capacidad, tipoCpu, dimensiones, sistemaOperativo)
-VALUES (38, 4, 'Redmi Note 13', 'Redmi Note 13', 299.99, '48 MP', '4 GB', 'RedmiNote13.png', '720p', true, true, '2.0GHz', '64 GB', 'Mediatek Helio G88', '161.9 x 75.2 x 8.3 mm', 'Android 12');
-
-
-drop table if exists movil;
-
-CREATE TABLE movil(
-numSerie varchar(30) primary key, 
-idModelo int, 
-idCliente int,
-precioVenta float, 
-fechaVenta date,
-comentarios varchar(100),
-constraint fk_idModelo foreign key (idModelo) references modelo(idModelo),
-constraint fk_idCliente foreign key (idCliente) references cliente(idCliente)
-);
+--
+-- Volcado de datos para la tabla `movil`
+--
 
 INSERT INTO `movil` (`numSerie`, `idModelo`, `idCliente`, `precioVenta`, `fechaVenta`, `comentarios`) VALUES
 ('AEI45CMR1BX', 22, NULL, NULL, NULL, NULL),
@@ -379,6 +355,60 @@ INSERT INTO `movil` (`numSerie`, `idModelo`, `idCliente`, `precioVenta`, `fechaV
 ('ZKI88VBI7WW', 26, NULL, NULL, NULL, NULL),
 ('ZWL79VAY4YC', 5, NULL, NULL, NULL, NULL),
 ('ZXM43LDC4BI', 26, 1, NULL, NULL, NULL);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`idCliente`);
+
+--
+-- Indices de la tabla `marca`
+--
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`idMarca`);
+
+--
+-- Indices de la tabla `modelo`
+--
+ALTER TABLE `modelo`
+  ADD PRIMARY KEY (`idModelo`),
+  ADD KEY `fk_marca` (`marca`);
+
+--
+-- Indices de la tabla `movil`
+--
+ALTER TABLE `movil`
+  ADD PRIMARY KEY (`numSerie`),
+  ADD KEY `fk_idModelo` (`idModelo`),
+  ADD KEY `fk_idCliente` (`idCliente`);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `modelo`
+--
+ALTER TABLE `modelo`
+  ADD CONSTRAINT `fk_marca` FOREIGN KEY (`marca`) REFERENCES `marca` (`idMarca`);
+
+--
+-- Filtros para la tabla `movil`
+--
+ALTER TABLE `movil`
+  ADD CONSTRAINT `fk_idCliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`),
+  ADD CONSTRAINT `fk_idModelo` FOREIGN KEY (`idModelo`) REFERENCES `modelo` (`idModelo`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 
 
