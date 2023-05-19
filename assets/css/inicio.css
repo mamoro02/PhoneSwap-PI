@@ -1,5 +1,5 @@
 body {
-    background-image: url('../imagenes/fondoStartPage.jpg');
+    background-image: url('../../imagenes/fondoStartPage.jpg');
     height: 200px;
         background-repeat: no-repeat;
         background-size: cover;
