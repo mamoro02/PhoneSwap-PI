@@ -8,6 +8,29 @@ $security = new Security;
 
 $userName = $security->getUserData();
 
+/* var_dump($security->getUserData()); */
+
+/* session_start(); */
+
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['loggedIn'])) {
+    // Usuario ha iniciado sesión, mostrar enlace para cerrar sesión
+    $userName = $_SESSION['loggedIn']; // Obtener el nombre de usuario
+    $logoutLink = '<a href="logout.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Cerrar sesión</a>';
+} else {
+    // Usuario no ha iniciado sesión, mostrar enlace para iniciar sesión
+    $userName = ''; // No hay nombre de usuario
+    $logoutLink = '<a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Iniciar sesión</a>';
+}
+
+//EMPIEZA A RELLENAR A PARTIR DE AQUI
+
+require_once __DIR__ . "/vendor/autoload.php";
+
+$security = new Security;
+
+$userName = $security->getUserData();
+
 //prueba
 $mobileRepository = new MobileRepository;
 
@@ -17,6 +40,10 @@ $dataModels = $mobileRepository->getAllModels();
 exit; */
 
 /* var_dump($security->getUserData()); */
+
+//PARA LAS MARCAS 
+
+$brands = $mobileRepository->getBrands();
 
 ?>
 <!doctype html>
@@ -35,41 +62,50 @@ exit; */
     <link rel="stylesheet" href="assets/css/indexStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
 </head>
 
 <body oncontextmenu='return false' class='snippet-body'>
     <!-- barra de navegacion -->
     <header>
         <div class="container-fluid">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark bg-dark  fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="index.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0); margin-right: 5px;" class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
                     </a>
                 </div>
                 <!-- Barra de busqueda -->
-                <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
+                <div class="dropdown show">
+                    <a class="btn btn-secondary btn-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Seleccione la marca
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <?= $mobileRepository->drawBrands($brands) ?>
+                    </div>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                    <?= "<p style='color:white'>$userName</p>" ?>
-                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
+                    <p style="color:white"><?= $userName ?></p>
+                    <?= $logoutLink ?>
                 </div>
                 <div class="row col-2">
-                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                    <a href="miCuenta.html" class="mi-cuenta-link"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
                 </div>
+
             </nav>
 
         </div>
         <!-- Banner de fondo -->
 
-        <div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel" style="width: 60%">
+        <div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel" style="width: 75%;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="imagenes/icon/fotoBanner1.jpg" alt="First slide">
@@ -104,17 +140,20 @@ exit; */
                         <h3 class="mb-3">DISPOSITIVOS</h3>
                     </div>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                        <a class="btn  mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
                             <i class="fa fa-arrow-left"></i>
                         </a>
-                        <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                        <a class="btn  mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="next">
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     </div>
                     <div class="col-12">
                         <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+
                             <div class="carousel-inner">
-                                <?= $mobileRepository->drawModels($dataModels) ?>
+
+                            <?= $mobileRepository->drawModels($dataModels) ?>
+
                             </div>
                         </div>
                     </div>
@@ -140,13 +179,13 @@ exit; */
                         Internet 24h.
                     </p>
 
-                    <div class="mt-4">
+                    <div class="mt-4 btn-">
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.facebook.com/LaRambleta/?locale=es_ES" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-facebook"></i></a>
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/rambleta/?hl=es" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-instagram"></i></a>
                         <!-- Twitter -->
-                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" type="button" class="btn btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
+                        <a href="https://twitter.com/La_Rambleta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" type="button" class="btn-primary btn-floating btn-light btn-lg"><i class="bi bi-twitter"></i></a>
 
                     </div>
                 </div>
@@ -194,5 +233,7 @@ exit; */
     </footer>
     <script type='text/javascript'></script>
 </body>
+
+</html>
 
 </html>
