@@ -89,6 +89,7 @@ $brands = $mobileRepository->getBrands();
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <?= $mobileRepository->drawBrands($brands) ?>
+                        <a class='dropdown-item' href='inicio.php'>Todos</a>
                     </div>
                 </div>
                 <!-- Icono login y enlace a login.php -->
