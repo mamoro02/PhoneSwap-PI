@@ -1,6 +1,36 @@
+<?php
 
+declare(strict_types=1);
+
+require_once __DIR__ . "/vendor/autoload.php";
+
+$id = (int) $_GET['id'];
+
+$cesta = new Carrito;
+
+$security = new Security;
+
+$security->checkLoggedIn(); //si el usuario no está registrado no puede acceder a la compra
+
+$arrCesta = $cesta->getCesta($id);
+/* 
+session_destroy(); */
+
+$cestaObjetos = $cesta->getModelsCesta($arrCesta);
+
+/* var_dump($cestaObjetos); */
+
+$totalPrice = 0;
+
+foreach ($cestaObjetos as $movil) {
+    $totalPrice += $movil["precioActual"];
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,9 +48,10 @@
     <link rel="stylesheet" href="./assets/css/indexStyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
-    
+
 
 </head>
+
 <body>
     <header>
         <div class="container-fluid">
@@ -29,8 +60,7 @@
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
                     <a class="navbar-brand" href="inicio.php">
-                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
-                            class="d-inline-block align-top" alt="">
+                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)" class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
                     </a>
                 </div>
@@ -52,35 +82,41 @@
     </header><br><br><br>
 
 
-<main>
-  <h1 style="text-align: center;">TU CESTA </h1 >
-    
-  <h5 style="text-align: left;">Productos añadidos a tu cesta</h5>
-    <table>
-      <thead>
-      <tr>
-        <th>Producto</th>
-        <th>Precio</th>
-        <th>Cantidad</th>
-        <th>Subtotal</th>
-         <th></th>
-      </tr>
-      </thead>
-      <tbody>
-        
-      </tbody>
-      <tfoot>
-      <tr>
-        <td colspan="3"></td>
-        <td>Total: €<span id="cart-total">0</span></td>
-        <td></td>
-       </tr>
-     </tfoot>
-  </table>
-  <a href="Pago.html"><button class="checkout-btn">Pagar</button></a>
-  
-</main>
+    <main>
+        <h1 style="text-align: center;">TU CESTA </h1>
+
+        <h5 style="text-align: left;">Productos añadidos a tu cesta</h5>
+        <table>
+            <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>descripcion</th>
+                    <th>precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--                 <tr>
+                    <td>Apple</td>
+                    <td>Iphone 11</td>
+                    <td>500</td>
+                    <td>1</td>
+                </tr> -->
+
+                <?= $cesta->drawCarrito($cestaObjetos) ?>
+                <tr>
+                    <td>Precio Total</td>
+                    <td><?= $totalPrice ?></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <a href="Pago.html"><button class="checkout-btn">Pagar</button></a>
+
+    </main>
 
 
 </body>
+
 </html>

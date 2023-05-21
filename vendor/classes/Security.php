@@ -6,7 +6,7 @@ class Security extends Connection
     //nos guardamos en los atributos el login y el index.php
 
     private string $loginPage = "login.php";
-    private string $homePage = "index.php";
+    private string $homePage = "inicio.php";
 
     public function __construct()
     {
