@@ -21,13 +21,13 @@
 
 </head>
 <body>
-    <header>
+<header>
         <div class="container-fluid">
             <nav class="navbar navbar-dark bg-dark fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
-                    <a class="navbar-brand" href="index.php">
+                    <a class="navbar-brand" href="inicio.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
                             class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
@@ -35,16 +35,13 @@
                 </div>
                 <!-- Barra de busqueda -->
                 <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
+                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 80px;">Login<br></a>
                 </div>
                 <div class="row col-2">
-                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                    <a href="miCuenta.php"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
                 </div>
             </nav>
         </div>
@@ -76,7 +73,7 @@
        </tr>
      </tfoot>
   </table>
-  <a href="Pago.html"><button class="checkout-btn">Pagar</button></a>
+  <a href="Pago.php"><button class="checkout-btn">Pagar</button></a>
   
 </main>
 

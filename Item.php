@@ -43,7 +43,7 @@ exit; */
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
-                    <a class="navbar-brand" href="index.php">
+                    <a class="navbar-brand" href="inicio.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
                             class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
@@ -51,16 +51,13 @@ exit; */
                 </div>
                 <!-- Barra de busqueda -->
                 <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
+                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 80px;">Login<br></a>
                 </div>
                 <div class="row col-2">
-                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                    <a href="miCuenta.php"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
                 </div>
             </nav>
         </div>
@@ -76,7 +73,7 @@ exit; */
             </div>
             <div class="col-md-6" style="background-color: rgb(241, 246, 250);">
                 <h2 style="position: absolute; margin-left: 40px; margin-top: 20px; font-size: 25px; "><?= $currentModel->getModel() ?></h2>
-                <a href="carritoCompra.html"><button class="btn btn-buy">Comprar</button></h2></a>
+                <a href="carritoCompra.php"><button class="btn btn-buy">Comprar</button></h2></a>
                 <br>
                 <p style="position: absolute; margin-left: 40px; padding:10px; margin-top: 30px;"><a <?= "href='fichaTecnica.php?idModelo=".$currentModel->getIdModel()."'" ?>>Ficha técnica</a></p>
                 
