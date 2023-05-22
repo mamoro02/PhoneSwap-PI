@@ -160,6 +160,9 @@ $brands = $mobileRepository->getBrands();
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <a href="carritoCompra.php">Ir al carrito</a>
+                    </div>
                 </div>
             </div>
         </section>
