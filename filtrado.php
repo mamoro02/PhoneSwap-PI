@@ -162,7 +162,7 @@ exit; */
 
                             <div class="carousel-inner">
 
-                            <?= $mobileRepository->drawModelsByBrand($mobilesByBrand) ?>
+                                <?= $mobileRepository->drawModelsByBrand($mobilesByBrand) ?>
 
                             </div>
                         </div>
