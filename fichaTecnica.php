@@ -37,30 +37,32 @@ exit;  */
             <nav class="navbar navbar-dark bg-dark fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
+<<<<<<< HEAD
                 <div class="row col-3 offset-1 ">
                     <a class="navbar-brand" href="inicio.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0); margin-right: 5px;"
+=======
+                <div class="row col-3 offset-1">
+                    <a class="navbar-brand" href="inicio.php">
+                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
+>>>>>>> 298944442f97eee5e798b7fe8f4a2b34ae99f3eb
                             class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
                     </a>
                 </div>
                 <!-- Barra de busqueda -->
                 <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
+                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 80px;">Login<br></a>
                 </div>
                 <div class="row col-2">
-                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                    <a href="miCuenta.php"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
                 </div>
-
             </nav>
-
         </div>
+
         <!--Jumbotron-->
         <div class="container-fluid">
             <div class="jumbotron" style="background-image: url('./imagenes/fichaTecnica.png'); height:600px; background-size: cover;">

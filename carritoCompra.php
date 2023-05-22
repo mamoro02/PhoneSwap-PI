@@ -53,68 +53,61 @@ foreach ($cestaObjetos as $movil) {
 </head>
 
 <body>
-    <header>
+<header>
         <div class="container-fluid">
             <nav class="navbar navbar-dark bg-dark fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
                 <div class="row col-3 offset-1">
-                    <a class="navbar-brand" href="inicio.php">
-                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)" class="d-inline-block align-top" alt="">
+                    <a class="navbar-brand" href="index.php">
+                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
+                            class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
                     </a>
                 </div>
                 <!-- Barra de busqueda -->
                 <div class="row col-3 offset-1">
-                    <form class="form-inline mx-auto my-auto">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
                 </div>
                 <!-- Icono login y enlace a login.php -->
                 <div class="row col-1 offset-1">
-                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 110px;">Login</a>
+                    <a href="login.php" style="color: white; display: inline-block; align-items: center; margin-left: 80px;">Login<br></a>
                 </div>
                 <div class="row col-2">
-                    <a href="miCuenta.html"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                    <a href="miCuenta.php"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
                 </div>
             </nav>
         </div>
     </header><br><br><br>
 
 
-    <main>
-        <h1 style="text-align: center;">TU CESTA </h1>
-
-        <h5 style="text-align: left;">Productos añadidos a tu cesta</h5>
-        <table>
-            <thead>
-                <tr>
-                    <th>Modelo</th>
-                    <th>descripcion</th>
-                    <th>precio</th>
-                    <th>Cantidad</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--                 <tr>
-                    <td>Apple</td>
-                    <td>Iphone 11</td>
-                    <td>500</td>
-                    <td>1</td>
-                </tr> -->
-
-                <?= $cesta->drawCarrito($cestaObjetos) ?>
-                <tr>
-                    <td>Precio Total</td>
-                    <td><?= $totalPrice ?></td>
-                </tr>
-
-            </tbody>
-        </table>
-        <a href="Pago.html"><button class="checkout-btn">Pagar</button></a>
-
-    </main>
+<main>
+  <h1 style="text-align: center;">TU CESTA </h1 >
+    
+  <h5 style="text-align: left;">Productos añadidos a tu cesta</h5>
+    <table>
+      <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+         <th></th>
+      </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="3"></td>
+        <td>Total: €<span id="cart-total">0</span></td>
+        <td></td>
+       </tr>
+     </tfoot>
+  </table>
+  <a href="Pago.html"><button class="checkout-btn">Pagar</button></a>
+  
+</main>
 
 
 </body>

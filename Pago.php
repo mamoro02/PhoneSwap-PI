@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/f46ccf0588.js" crossorigin="anonymous"></script>
     
-    <title>tramirtacion de Pago</title>
+    <title>tramitacion de Pago</title>
     <link rel="shortcut icon" href="imagen/icon/">
 	<link rel="stylesheet" type="text/css" href="./assets/css/pago.css">
 

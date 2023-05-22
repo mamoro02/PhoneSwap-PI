@@ -93,12 +93,14 @@ $brands = $mobileRepository->getBrands();
                     </div>
                 </div>
                 <!-- Icono login y enlace a login.php -->
-                <div class="row col-1 offset-1">
-                    <p style="color:white"><?= $userName ?></p>
-                    <?= $logoutLink ?>
+                <div class="row col-1 offset-1" style="margin-top: 15px; margin-left:200px;">
+                    <p style="color:white"><?= $userName ?></p>  
                 </div>
-                <div class="row col-2">
-                    <a href="miCuenta.html" class="mi-cuenta-link"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-left: 80px;"></a>
+                <div class="row col-1" style="margin-right: 50px;">
+                <?= $logoutLink ?>
+                </div>
+                <div class="row col-1">
+                    <a href="miCuenta.php" class="mi-cuenta-link"><img src="imagenes/icon/iconLogin.png" alt="Login" style="width: 30px; margin-right: 70px;"></a>
                 </div>
 
             </nav>
@@ -138,7 +140,7 @@ $brands = $mobileRepository->getBrands();
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <h3 class="mb-3">DISPOSITIVOS</h3>
+                        <h3 class="mb-3">NOVEDADES</h3>
                     </div>
                     <div class="col-6 text-right">
                         <a class="btn  mb-3 mr-1" href="#carouselExampleIndicators1" role="button" data-slide="prev">
