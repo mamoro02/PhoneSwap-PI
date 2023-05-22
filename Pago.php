@@ -35,7 +35,7 @@
             // Mostrar la alerta de pedido realizado correctamente
                 alert('¡Se ha realizado el pedido correctamente!');
             // Redirigir a la pagina de inicio
-                window.location.href = 'index.php';
+                window.location.href = 'inicio.php';
             } else {
             // Mostrar el mensaje de error
                 alert('Por favor, ingrese un correo válido (debe contener "@gmail" o "@hotmail").');

@@ -112,7 +112,7 @@ foreach ($cestaObjetos as $movil) {
 
             </tbody>
         </table>
-        <a href="Pago.html"><button class="checkout-btn">Pagar</button></a>
+        <a href="Pago.php"><button class="checkout-btn">Pagar</button></a>
 
     </main>
 

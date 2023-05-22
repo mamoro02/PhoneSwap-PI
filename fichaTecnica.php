@@ -37,15 +37,9 @@ exit;  */
             <nav class="navbar navbar-dark bg-dark fixed-top">
 
                 <!-- Icono y nombre de la empresa -->
-<<<<<<< HEAD
                 <div class="row col-3 offset-1 ">
                     <a class="navbar-brand" href="inicio.php">
                         <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0); margin-right: 5px;"
-=======
-                <div class="row col-3 offset-1">
-                    <a class="navbar-brand" href="inicio.php">
-                        <img src="imagenes/icon/icono.png" width="33" style="transform: scale(2.0)"
->>>>>>> 298944442f97eee5e798b7fe8f4a2b34ae99f3eb
                             class="d-inline-block align-top" alt="">
                         <b>Phone Swap</b>
                     </a>
