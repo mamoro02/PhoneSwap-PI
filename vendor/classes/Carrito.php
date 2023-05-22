@@ -7,7 +7,7 @@ class Carrito extends Connection
     {
         $this->connect();
 
-        session_start(); //a partir de este punto vamos a usar variables de sesion
+        if(session_status() !== PHP_SESSION_ACTIVE) session_start(); //a partir de este punto vamos a usar variables de sesion
 
         /* session_destroy(); */
     }
@@ -22,11 +22,11 @@ class Carrito extends Connection
 
         //comprobamos que no se encuentre en el array para que no nos lo duplique, true comprueba que los tipos sean iguales
 
-        if (!in_array($id, $_SESSION['cesta'], true)) {
+/*         if (!in_array($id, $_SESSION['cesta'], true)) {
             $_SESSION['cesta'][] = $id;
-        }
+        } */
 
-
+        $_SESSION['cesta'][] = $id;
         $cesta = $_SESSION['cesta'];
 
         return $cesta;

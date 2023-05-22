@@ -12,7 +12,7 @@ class Security extends Connection
     {
         $this->connect(); //establecemos la conexion
 
-        session_start(); //Le decimos que a partor de ahora vamos a usar el sistema de sesiones, tendremos que invocarlo en cualquier otro punto de la app donde las vayamos a utilizar
+        if(session_status() !== PHP_SESSION_ACTIVE) session_start(); //Le decimos que a partor de ahora vamos a usar el sistema de sesiones, tendremos que invocarlo en cualquier otro punto de la app donde las vayamos a utilizar
 
     }
 
