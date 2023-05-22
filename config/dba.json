@@ -2,6 +2,6 @@
     "host" : "localhost",
     "port" : "3306",
     "dbname" : "phoneswap",
-    "user" : "root",
+    "user" : "",
     "password" : ""
 }
