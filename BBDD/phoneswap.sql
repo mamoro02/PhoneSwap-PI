@@ -23,9 +23,16 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+drop database if exists phoneswap;
+
+CREATE DATABASE phoneSwap;
+
+USE phoneswap;
 --
 -- Estructura de tabla para la tabla `cliente`
 --
+
+drop table if exists cliente;
 
 CREATE TABLE `cliente` (
   `idCliente` int(11) NOT NULL,
@@ -49,6 +56,7 @@ INSERT INTO `cliente` (`idCliente`, `nombreCuenta`, `correo`, `contraseña`, `no
 --
 -- Estructura de tabla para la tabla `marca`
 --
+drop table if exists marca;
 
 CREATE TABLE `marca` (
   `idMarca` int(11) NOT NULL,
@@ -71,7 +79,7 @@ INSERT INTO `marca` (`idMarca`, `nombreMarca`) VALUES
 --
 -- Estructura de tabla para la tabla `modelo`
 --
-
+drop table if exists modelo;
 CREATE TABLE `modelo` (
   `idModelo` int(11) NOT NULL,
   `marca` int(11) NOT NULL,
@@ -140,7 +148,7 @@ INSERT INTO `modelo` (`idModelo`, `marca`, `descripcion`, `modelo`, `precioActua
 --
 -- Estructura de tabla para la tabla `movil`
 --
-
+drop table if exists movil;
 CREATE TABLE `movil` (
   `numSerie` varchar(30) NOT NULL,
   `idModelo` int(11) DEFAULT NULL,
@@ -408,14 +416,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-
-
-
-
-
-
-
 
