@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 
 drop database if exists phoneswap;
 
-CREATE DATABASE phoneSwap;
+CREATE DATABASE phoneswap;
 
 USE phoneswap;
 --
